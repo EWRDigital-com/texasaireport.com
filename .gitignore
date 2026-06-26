@@ -1,0 +1,20 @@
+# Vercel
+.vercel
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment / secrets — never commit
+.env
+.env.*
+*.local
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Logs / deps (not used by this static site, but guarded)
+*.log
+node_modules/
