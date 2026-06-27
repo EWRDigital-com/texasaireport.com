@@ -1,0 +1,248 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config/site';
+const title = `TRAIGA: A Plain-English Guide to the Texas Responsible AI Governance Act — ${SITE.name}`;
+const description = 'TRAIGA (HB 149) is Texas\'s first comprehensive AI law, signed June 22, 2025 by Gov. Abbott and in effect since January 1, 2026. Learn who it covers, what it requires, the penalty tiers, enforcement process, and how Texas compares to Colorado and the EU.';
+---
+<Base title={title} description={description}>
+  <div class="col" style="padding-top:40px;padding-bottom:64px">
+
+    <div class="kicker">TRAIGA Explainer</div>
+    <h1 style="margin:8px 0 20px;color:var(--navy)">TRAIGA: A Plain-English Guide to the Texas Responsible AI Governance Act</h1>
+
+    <p style="font-size:18px;line-height:1.6;margin-bottom:32px;max-width:720px">
+      The Texas Responsible Artificial Intelligence Governance Act — TRAIGA, enacted as House Bill 149 — is Texas's first comprehensive AI law. Governor Greg Abbott signed it on June 22, 2025; it took effect January 1, 2026. TRAIGA sets prohibited uses that apply to every entity operating in Texas, layers disclosure requirements on government agencies and healthcare providers, and gives the Texas Attorney General exclusive enforcement authority with tiered civil penalties reaching $200,000 per uncurable violation.
+    </p>
+
+    <!-- ───────────────────────────────── WHAT TRAIGA DOES ───────────────────────────────── -->
+    <h2 style="color:var(--navy);font-size:22px;margin-bottom:8px">What TRAIGA does</h2>
+    <p>TRAIGA operates on two tracks: universal prohibitions that apply to everyone, and disclosure duties that apply only to specific entity types.</p>
+    <p>
+      The prohibited uses apply to any person or entity. No one may deploy an AI system with the intent to behaviorally manipulate users into self-harm or criminal activity, infringe constitutional rights, commit intentional and unlawful discrimination (disparate impact alone is insufficient), or generate child sexual content or deepfakes. Government entities face two additional prohibitions: social scoring and biometric identification without consent.
+    </p>
+    <p>
+      The disclosure duties are narrower. State and local government agencies must tell consumers — before or at the time of interaction, in plain English, free of dark patterns — when an AI system is involved. Healthcare providers must disclose AI use in treatment on the date of service, or as soon as reasonably possible in emergencies. Private non-healthcare businesses face no consumer-facing AI disclosure requirement; that provision was removed from the final bill.
+    </p>
+    <p>
+      TRAIGA also preempts any city or county AI ordinance, establishing a single statewide standard rather than a patchwork of local rules (Tex. Bus. &amp; Comm. Code § 552.003).
+    </p>
+    <p style="margin-top:12px">
+      <a href="/news/traiga-takes-effect/">Read the full overview: Texas Enacts One of the Nation's First Comprehensive AI Laws</a>
+    </p>
+
+    <!-- ───────────────────────────────── WHO IT APPLIES TO ───────────────────────────────── -->
+    <h2 style="color:var(--navy);font-size:22px;margin-top:40px;margin-bottom:8px">Who TRAIGA applies to</h2>
+    <p>TRAIGA's geographic reach is broad. Any person or entity that promotes, advertises, or conducts business in Texas; produces products or services used by Texas residents; or develops or deploys an AI system in Texas is covered — regardless of where it is headquartered (Tex. Bus. &amp; Comm. Code § 551.002(1)–(3)).</p>
+    <p>
+      The statute defines "AI system" expansively: any machine-based system that, for any explicit or implicit objective, infers from its inputs how to generate outputs — content, decisions, predictions, or recommendations — that can influence physical or virtual environments. Most enterprise AI deployments fit that definition.
+    </p>
+    <p>
+      <strong>What is out of scope:</strong> B2B and employment-context AI interactions are explicitly excluded. TRAIGA does not impose disclosure, notice, or nondiscrimination requirements for employee or commercial interactions — only consumer-facing AI is in scope.
+    </p>
+    <p><strong>Key exemptions from the anti-discrimination provision:</strong></p>
+    <ul style="padding-left:20px;margin-top:4px">
+      <li style="margin-bottom:8px">Insurers subject to state insurance laws prohibiting unfair discrimination are exempt (§ 552.056(d)).</li>
+      <li style="margin-bottom:8px">Federally insured financial institutions complying with applicable federal and state banking law are deemed compliant (§ 552.056(e)).</li>
+      <li style="margin-bottom:8px">Hospital districts and institutions of higher education are excluded from the government-agency AI disclosure requirement (§ 552.001(1)–(2)).</li>
+      <li>Biometric data used for fraud prevention and cybersecurity training is carved out.</li>
+    </ul>
+    <p style="margin-top:12px">
+      <a href="/news/does-traiga-apply-to-your-business/">Full scope guide: Does TRAIGA Apply to Your Business?</a>
+    </p>
+
+    <!-- ───────────────────────────────── WHAT IT REQUIRES ───────────────────────────────── -->
+    <h2 style="color:var(--navy);font-size:22px;margin-top:40px;margin-bottom:8px">What TRAIGA requires</h2>
+    <p>For covered entities, the core compliance tasks fall into two categories: prohibitions (universal) and disclosure (entity-specific).</p>
+    <p>
+      <strong>For government agencies:</strong> Consumer-AI disclosure must be clear, conspicuous, in plain English, and free of dark patterns. No consumer consent is required — just timely notice.
+    </p>
+    <p>
+      <strong>For healthcare providers:</strong> Disclose AI use in treatment at the date of service or as soon as reasonably possible in emergencies. That notice may be embedded in standard patient intake forms.
+    </p>
+    <p>
+      <strong>For all covered entities:</strong> If the AG opens an investigation, it can issue a Civil Investigative Demand (CID) requiring AI system descriptions, intended use, training data categories, inputs and outputs, performance metrics, known limitations, post-deployment monitoring records, and user safeguard measures (§ 552.103). Companies that cannot respond face additional exposure on top of the underlying allegation.
+    </p>
+    <p>
+      TRAIGA provides explicit affirmative defenses. Entities are protected when they discover violations through red-teaming or adversarial testing; conduct an internal review using the NIST AI Risk Management Framework; follow state agency guidance; or act on developer, deployer, or stakeholder feedback. A third-party misuse carveout also applies: a developer or deployer cannot be held liable simply because an end user deploys an AI system for a prohibited purpose.
+    </p>
+    <p style="margin-top:12px">
+      <a href="/news/traiga-compliance-checklist-texas-general-counsel/">Detailed compliance steps: TRAIGA Compliance Checklist for Texas General Counsel</a>
+    </p>
+
+    <!-- ───────────────────────────────── PENALTIES ───────────────────────────────── -->
+    <h2 style="color:var(--navy);font-size:22px;margin-top:40px;margin-bottom:8px">Penalties</h2>
+    <p>TRAIGA's civil penalties are tiered, not flat (Tex. Bus. &amp; Comm. Code § 552.105(a)):</p>
+    <ul style="padding-left:20px;margin-top:4px">
+      <li style="margin-bottom:8px"><strong>Curable violations:</strong> $10,000–$12,000 per violation</li>
+      <li style="margin-bottom:8px"><strong>Uncurable violations:</strong> $80,000–$200,000 per violation</li>
+      <li style="margin-bottom:8px"><strong>Continuing violations:</strong> $2,000–$40,000 per day</li>
+      <li><strong>Agency sanctions against licensed persons</strong> (at AG recommendation): up to $100,000</li>
+    </ul>
+    <p>
+      The statute does not define what makes a violation curable versus uncurable. That line — the difference between a $10,000–$12,000 penalty and an $80,000–$200,000 one — will, as Norton Rose Fulbright noted in March 2026, be "developed by experts, the courts and the resulting common law." The first companies to receive violation notices will write those rules.
+    </p>
+    <p>
+      One practical implication: entities have 60 days after receiving an AG notice of violation to cure and submit a written explanation of the cure and any policy changes. Norton Rose Fulbright has cautioned that 60 days "may be insufficient time to 'cure' a violation of TRAIGA, particularly because a 'cure' might mean that the party must substantially modify an AI system." In practice, a violation notice can function as a cease-and-desist.
+    </p>
+    <p style="margin-top:12px">
+      <a href="/news/what-texas-companies-get-wrong-traiga-readiness/">Why the penalties matter in practice: What Texas Companies Get Wrong About TRAIGA Readiness</a>
+    </p>
+
+    <!-- ───────────────────────────────── ENFORCEMENT ───────────────────────────────── -->
+    <h2 style="color:var(--navy);font-size:22px;margin-top:40px;margin-bottom:8px">Enforcement</h2>
+    <p>The Texas Attorney General holds exclusive enforcement authority under TRAIGA. There is no private right of action (Tex. Bus. &amp; Comm. Code § 552.101).</p>
+    <p>
+      The enforcement path runs in five steps: a consumer files a complaint through the AG's online portal → the AG may issue a CID → if a violation is found, the entity receives a notice → 60-day cure window → if uncured, the AG seeks civil penalties in court. The AG is prohibited from bringing a civil penalty action against an AI system that has not yet been deployed (§ 552.105(f)).
+    </p>
+    <p>
+      As of late June 2026, no publicly reported TRAIGA enforcement actions or civil investigative demands have been filed. The AG's office has been building enforcement infrastructure since the law was signed — staffing, technical capacity, and agency disclosure training. The complaint portal has a statutory deadline of September 1, 2026 to go live; practitioners are treating that date as the enforcement inflection point.
+    </p>
+    <p>
+      AG Ken Paxton's office has demonstrated appetite for AI-adjacent enforcement: it launched investigations into Character.AI, Reddit, Instagram, and Discord in 2024 and created a specialized data privacy enforcement team in June 2024.
+    </p>
+    <p style="margin-top:12px">
+      <a href="/news/traiga-enforcement-six-months-in/">Current enforcement status: TRAIGA Is Six Months Old. No Enforcement Actions — But the Machinery Is Being Built.</a>
+    </p>
+
+    <!-- ───────────────────────────────── DIR SANDBOX ───────────────────────────────── -->
+    <h2 style="color:var(--navy);font-size:22px;margin-top:40px;margin-bottom:8px">The DIR regulatory sandbox</h2>
+    <p>TRAIGA authorizes the Texas Department of Information Resources (DIR) to run an AI regulatory sandbox — a formal testing program that lets companies develop and test AI without needing to first clear separate state licensing or regulatory authorization.</p>
+    <p>
+      Sandbox participation gives two concrete protections: the AG cannot file enforcement charges for violations of state laws waived for sandbox purposes, and state agencies cannot impose fines or suspend licenses for those same waived requirements during the testing period. The testing window runs up to 36 months; DIR may extend for good cause.
+    </p>
+    <p>
+      Oversight sits with the Texas Artificial Intelligence Council — a seven-member body appointed by the governor, lieutenant governor, and speaker of the House, administratively attached to DIR. Participants file quarterly performance and risk reports; DIR submits annual reports to the legislature with outcomes and policy recommendations. DIR maintains confidentiality of trade secrets and sensitive information submitted by applicants.
+    </p>
+    <p>
+      <strong>What the sandbox does not waive:</strong> TRAIGA's four core prohibitions — behavioral manipulation, constitutional-rights infringement, intentional unlawful discrimination, and child sexual content bans — still apply during sandbox participation. The sandbox relieves only separate licensing and regulatory requirements, not core TRAIGA obligations.
+    </p>
+    <p>
+      As of June 2026, the sandbox is authorized by law and in effect. Whether DIR has published application forms or begun accepting participants has not been confirmed; builders should check directly at <a href="https://dir.texas.gov/" rel="noopener noreferrer">dir.texas.gov</a>.
+    </p>
+    <p style="margin-top:12px">
+      <a href="/news/texas-ai-regulatory-sandbox-explained/">Full sandbox guide: What Texas's AI Regulatory Sandbox Offers Builders</a>
+    </p>
+
+    <!-- ───────────────────────────────── TEXAS VS COLORADO VS EU ───────────────────────────────── -->
+    <h2 style="color:var(--navy);font-size:22px;margin-top:40px;margin-bottom:8px">How Texas compares to Colorado and the EU</h2>
+    <p>Three major AI legal regimes are now in force — or imminently becoming so — and they operate on fundamentally different logics.</p>
+
+    <div style="overflow-x:auto;margin:16px 0 24px">
+      <table style="width:100%;border-collapse:collapse;font-size:14px">
+        <thead>
+          <tr style="background:var(--navy,#1a2b45);color:#fff">
+            <th style="padding:10px 12px;text-align:left">Dimension</th>
+            <th style="padding:10px 12px;text-align:left">TRAIGA (Texas)</th>
+            <th style="padding:10px 12px;text-align:left">Colorado SB 26-189</th>
+            <th style="padding:10px 12px;text-align:left">EU AI Act</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #e0e0e0">
+            <td style="padding:10px 12px"><strong>Effective date</strong></td>
+            <td style="padding:10px 12px">Jan 1, 2026</td>
+            <td style="padding:10px 12px">Jan 1, 2027</td>
+            <td style="padding:10px 12px">Phased: Feb 2025–Aug 2027+</td>
+          </tr>
+          <tr style="border-bottom:1px solid #e0e0e0;background:#f9f9f9">
+            <td style="padding:10px 12px"><strong>Framework</strong></td>
+            <td style="padding:10px 12px">Prohibition-based (intent required)</td>
+            <td style="padding:10px 12px">Disclosure + consumer rights</td>
+            <td style="padding:10px 12px">Risk-based tiered</td>
+          </tr>
+          <tr style="border-bottom:1px solid #e0e0e0">
+            <td style="padding:10px 12px"><strong>Enforcer</strong></td>
+            <td style="padding:10px 12px">TX AG exclusively</td>
+            <td style="padding:10px 12px">CO AG exclusively</td>
+            <td style="padding:10px 12px">National authorities + EU AI Office</td>
+          </tr>
+          <tr style="border-bottom:1px solid #e0e0e0;background:#f9f9f9">
+            <td style="padding:10px 12px"><strong>Private right of action</strong></td>
+            <td style="padding:10px 12px">No</td>
+            <td style="padding:10px 12px">No</td>
+            <td style="padding:10px 12px">No (complaint mechanism only)</td>
+          </tr>
+          <tr style="border-bottom:1px solid #e0e0e0">
+            <td style="padding:10px 12px"><strong>Disclosure duties</strong></td>
+            <td style="padding:10px 12px">Gov agencies + healthcare providers only</td>
+            <td style="padding:10px 12px">All covered ADMT in 7 domains</td>
+            <td style="padding:10px 12px">Varies by risk tier</td>
+          </tr>
+          <tr style="border-bottom:1px solid #e0e0e0;background:#f9f9f9">
+            <td style="padding:10px 12px"><strong>Impact assessments</strong></td>
+            <td style="padding:10px 12px">No</td>
+            <td style="padding:10px 12px">No (eliminated)</td>
+            <td style="padding:10px 12px">Yes (high-risk systems)</td>
+          </tr>
+          <tr style="border-bottom:1px solid #e0e0e0">
+            <td style="padding:10px 12px"><strong>NIST safe harbor</strong></td>
+            <td style="padding:10px 12px">Yes (explicit)</td>
+            <td style="padding:10px 12px">No</td>
+            <td style="padding:10px 12px">No</td>
+          </tr>
+          <tr style="background:#f9f9f9">
+            <td style="padding:10px 12px"><strong>Max penalty</strong></td>
+            <td style="padding:10px 12px">$200,000/uncurable violation</td>
+            <td style="padding:10px 12px">Not yet specified</td>
+            <td style="padding:10px 12px">EUR 35M or 7% global revenue</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      Colorado's original AI Act (SB 24-205) — a risk-tiered law modeled on the EU — was repealed in its entirety. On May 14, 2026, Governor Polis signed SB 26-189, replacing it with a narrower disclosure-and-rights model effective January 1, 2027. The repeal passed 34–1 in the Colorado Senate and 57–6 in the House, following a federal court stay and DOJ intervention triggered by a December 2025 White House executive order critical of Colorado's approach.
+    </p>
+    <p>
+      The EU AI Act entered into force August 1, 2024, with a phased rollout: prohibited AI practices have been enforceable since February 2, 2025; GPAI model rules since August 2, 2025; most high-risk AI system obligations take effect August 2, 2026. EU penalties for prohibited practices reach the greater of EUR 35 million or 7% of global annual turnover. A political agreement to streamline certain obligations was reached May 7, 2026, but formal EU Parliament and Council adoption had not been confirmed as of publication.
+    </p>
+    <p style="margin-top:12px">
+      <a href="/news/texas-colorado-eu-ai-law-compared/">Full comparison: Texas, Colorado, and the EU Just Diverged on AI Law. Here's the New Map.</a>
+    </p>
+
+    <!-- ───────────────────────────────── FAQ ───────────────────────────────── -->
+    <h2 style="color:var(--navy);font-size:22px;margin-top:48px;margin-bottom:16px">Frequently asked questions</h2>
+
+    <h3 style="color:var(--navy);font-size:17px;margin-bottom:6px">When does TRAIGA take effect?</h3>
+    <p style="margin-bottom:20px">
+      TRAIGA took effect January 1, 2026. Governor Greg Abbott signed HB 149 on June 22, 2025, giving organizations roughly six months to prepare before the law became operative.
+    </p>
+
+    <h3 style="color:var(--navy);font-size:17px;margin-bottom:6px">Does TRAIGA apply to small businesses?</h3>
+    <p style="margin-bottom:20px">
+      TRAIGA's prohibited-use provisions apply to any entity that develops or deploys AI in Texas or offers AI-powered products or services to Texas residents — there is no small-business exemption from the core prohibitions. However, for most private non-healthcare companies, the immediate practical burden is lighter than the law's headline suggests: there is no consumer-facing AI disclosure requirement for private businesses, and B2B and employment-context AI interactions are explicitly out of scope.
+    </p>
+
+    <h3 style="color:var(--navy);font-size:17px;margin-bottom:6px">What are the penalties under TRAIGA?</h3>
+    <p style="margin-bottom:20px">
+      Penalties are tiered, not flat. Curable violations carry $10,000–$12,000 per violation; uncurable violations carry $80,000–$200,000 per violation; continuing violations accrue at $2,000–$40,000 per day. Separately, the AG may recommend agency sanctions of up to $100,000 against licensed persons. The statute does not yet define what distinguishes a curable from an uncurable violation — that line will be drawn by early enforcement and common law.
+    </p>
+
+    <h3 style="color:var(--navy);font-size:17px;margin-bottom:6px">Is there a private right of action under TRAIGA?</h3>
+    <p style="margin-bottom:20px">
+      No. TRAIGA provides no private right of action (Tex. Bus. &amp; Comm. Code § 552.101). Enforcement authority belongs exclusively to the Texas Attorney General. Individuals cannot sue companies directly under TRAIGA; they can file complaints through the AG's portal, which the statute requires to be live by September 1, 2026.
+    </p>
+
+    <h3 style="color:var(--navy);font-size:17px;margin-bottom:6px">How is TRAIGA different from Colorado's AI Act?</h3>
+    <p style="margin-bottom:20px">
+      Colorado repealed its original AI Act (SB 24-205) entirely in May 2026 and replaced it with SB 26-189, effective January 1, 2027. Texas TRAIGA is already in effect and uses a prohibition-based, intent-required framework with disclosure duties only for government agencies and healthcare providers. Colorado's replacement law uses a disclosure-and-consumer-rights model covering seven sectors, with no impact assessments. Neither law creates a private right of action.
+    </p>
+
+    <h3 style="color:var(--navy);font-size:17px;margin-bottom:6px">What is the DIR regulatory sandbox?</h3>
+    <p style="margin-bottom:20px">
+      TRAIGA authorizes the Texas Department of Information Resources to administer a regulatory sandbox — a formal testing program offering up to 36 months of AI development without needing separate state licensing, with AG enforcement paused during participation. Core TRAIGA prohibitions still apply. As of June 2026, the sandbox is authorized but whether DIR has published application forms or begun accepting participants has not been confirmed.
+    </p>
+
+    <h3 style="color:var(--navy);font-size:17px;margin-bottom:6px">Does TRAIGA apply to employers using AI in hiring?</h3>
+    <p style="margin-bottom:20px">
+      TRAIGA does not impose disclosure, notice, or nondiscrimination requirements in employment or B2B contexts. AI used in hiring, performance management, or other internal employment decisions is out of scope for the disclosure obligations. The universal prohibited uses — behavioral manipulation, constitutional rights infringement, intentional unlawful discrimination — still apply to any context, including employment, though the disclosure and notice machinery does not.
+    </p>
+
+    <!-- ───────────────────────────────── ABOUT ───────────────────────────────── -->
+    <hr style="margin:48px 0 32px;border:none;border-top:1px solid #e0e0e0" />
+    <p style="font-size:14px;color:#555;line-height:1.6">
+      This guide was published by <a href="https://matthewbertram.com/" rel="noopener noreferrer">Matt Bertram</a> and reflects verified facts as of June 26, 2026. Texas AI Report follows strict editorial standards for YMYL legal and regulatory content; every factual claim traces to a named primary or secondary source. For our full editorial policy, see <a href="/editorial-standards">/editorial-standards</a>. This page is analysis and commentary, not legal advice.
+    </p>
+
+  </div>
+</Base>
