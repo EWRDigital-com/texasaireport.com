@@ -1,0 +1,19 @@
+---
+import Base from '../../layouts/Base.astro';
+import StoryCard from '../../components/StoryCard.astro';
+import { getCollection } from 'astro:content';
+export async function getStaticPaths(){
+  const slug=(t:string)=>t.toLowerCase().replace(/\s+/g,'-');
+  const items=(await getCollection('news')).filter(e=>!e.data.draft);
+  const tags=new Map<string,string>();
+  items.forEach(e=>e.data.tags.forEach(t=>tags.set(slug(t),t)));
+  return [...tags].map(([s,label])=>({params:{tag:s},props:{label,
+    items:items.filter(e=>e.data.tags.some(t=>slug(t)===s))}}));
+}
+const slug=(t:string)=>t.toLowerCase().replace(/\s+/g,'-');
+const { label, items } = Astro.props;
+---
+<Base title={`${label} — Texas AI Report`} description={`Coverage tagged ${label}.`}>
+  <div class="wrap" style="padding:24px 20px"><h1 style="color:var(--navy)">{label}</h1>
+    {items.map((e:any)=><StoryCard entry={e}/>)}</div>
+</Base>

@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import StoryCard from '../components/StoryCard.astro';
+import Newsletter from '../components/Newsletter.astro';
+import { getCollection } from 'astro:content';
+import { SITE } from '../config/site';
+const items=(await getCollection('news')).filter(e=>!e.data.draft)
+  .sort((a,b)=>+b.data.publishDate-+a.data.publishDate);
+const [lead,...rest]=items;
+---
+<Base title={`${SITE.name} — ${SITE.tagline}`} description={SITE.tagline}>
+  <div class="wrap" style="padding:24px 20px">
+    {lead && <StoryCard entry={lead}/>}
+    <Newsletter/>
+    {rest.map(e=><StoryCard entry={e}/>)}
+  </div>
+</Base>

@@ -1,0 +1,10 @@
+---
+const { entry } = Astro.props;
+const fmt=(d:Date)=>d.toLocaleDateString('en-US',{month:'short',day:'numeric'});
+---
+<a href={`/news/${entry.id}`} style="display:block;text-decoration:none;border-bottom:1px solid var(--line);padding:14px 0">
+  <div class="kicker">{entry.data.section}</div>
+  <div style="font-weight:700;color:var(--navy);font-size:18px;line-height:1.25;margin-top:4px">{entry.data.title}</div>
+  <div style="color:var(--muted);font-size:14px;margin-top:4px">{entry.data.dek}</div>
+  <div style="color:#999;font-size:12px;margin-top:6px">{fmt(entry.data.publishDate)}</div>
+</a>
