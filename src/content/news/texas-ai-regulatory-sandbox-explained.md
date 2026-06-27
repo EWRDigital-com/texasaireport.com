@@ -22,13 +22,13 @@ modalpointRelevant: false
 draft: false
 ---
 
-Texas built a regulatory escape hatch into TRAIGA. The law, effective January 1, 2026, authorizes the Texas Department of Information Resources to run an AI regulatory sandbox — a formal testing program that lets builders develop and test AI systems without having to first clear separate state licensing or regulatory authorization hurdles.
+Texas built a regulatory escape hatch into TRAIGA. The law, effective January 1, 2026, authorizes the [Texas Department of Information Resources](https://dir.texas.gov/) to run an AI regulatory sandbox — a formal testing program that lets builders develop and test AI systems without having to first clear separate state licensing or regulatory authorization hurdles.
 
 ## What the sandbox actually provides
 
 Participants get two concrete protections during the testing period. First, the Attorney General cannot file enforcement charges for violations of state laws that are waived for sandbox purposes. Second, state agencies cannot impose fines or suspend licenses for those same waived requirements while testing is active. The period runs up to 36 months; DIR can extend for good cause.
 
-Oversight sits with the Texas Artificial Intelligence Council, a seven-member body appointed by the governor, lieutenant governor, and speaker of the House, and administratively attached to DIR. The Council — or any applicable agency — can recommend removing a participant if the AI poses undue risk to public safety, violates federal law, or violates non-waived state law.
+Oversight sits with the [Texas Artificial Intelligence Council](https://www.americanbar.org/groups/business_law/resources/business-law-today/2025-july/texas-enters-ai-sandbox-with-traiga-implications-business-trials/), a seven-member body appointed by the governor, lieutenant governor, and speaker of the House, and administratively attached to DIR. The Council — or any applicable agency — can recommend removing a participant if the AI poses undue risk to public safety, violates federal law, or violates non-waived state law.
 
 DIR maintains confidentiality of trade secrets and sensitive information submitted by participants.
 
@@ -43,3 +43,17 @@ Once accepted, participants file quarterly reports covering performance metrics,
 The sandbox does not suspend TRAIGA's core prohibitions. A company inside the sandbox still cannot deploy AI designed to behaviorally manipulate users into self-harm or criminal activity, infringe constitutional rights, engage in intentional unlawful discrimination, or generate child sexual content or deepfakes. These apply regardless of testing status.
 
 As of June 2026, the sandbox is authorized by law and in effect. Whether DIR has published application forms or begun accepting participants has not been confirmed — builders interested in applying should check directly with DIR at dir.texas.gov.
+
+## Frequently asked questions
+
+### What can trigger removal from the TRAIGA sandbox once a company is accepted?
+
+The Texas Artificial Intelligence Council, or any applicable state agency, can recommend removing a participant if the AI system poses undue risk to public safety, violates federal law, or violates a state law that was not waived as part of the sandbox participation. Removal is not automatic — it requires a recommendation from the Council or the relevant agency.
+
+### Does sandbox participation protect a company from having to comply with TRAIGA's core prohibitions?
+
+No. The sandbox waives separate licensing and regulatory authorization requirements, but TRAIGA's four core prohibitions remain in force regardless of participation status. A sandboxed company still cannot deploy AI designed to behaviorally manipulate users into self-harm or criminal activity, infringe constitutional rights, engage in intentional unlawful discrimination, or generate child sexual content or non-consensual deepfakes.
+
+### Who sits on the Texas Artificial Intelligence Council that oversees the sandbox?
+
+The Council has seven members appointed across three offices: the governor, the lieutenant governor, and the speaker of the House. It is administratively attached to DIR and submits annual reports to the legislature with sandbox outcomes and policy recommendations.

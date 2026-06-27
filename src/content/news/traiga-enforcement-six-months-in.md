@@ -44,8 +44,18 @@ What separates curable from uncurable is not yet settled. The statute doesn't de
 
 ## Paxton's pre-TRAIGA track record
 
-AG Ken Paxton is not new to AI-adjacent enforcement. In 2024, his office launched investigations into Character.AI, Reddit, Instagram, and Discord over children's privacy and safety concerns, and created a specialized data privacy enforcement team.
+AG Ken Paxton is not new to AI-adjacent enforcement. In 2024, his office [launched investigations into Character.AI, Reddit, Instagram, and Discord](https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-launches-investigations-characterai-reddit-instagram-discord-and-other) over children's privacy and safety concerns, and created a specialized data privacy enforcement team.
 
 That track record suggests the office has the appetite and the infrastructure to act. Whether TRAIGA enforcement begins with a high-profile target or a quieter CID to a lesser-known company is unknowable — but the complaint portal opening this fall will give consumers a direct channel to the AG's desk.
 
 DIR rulemaking under TRAIGA remains still-developing; no formal agency guidance has been confirmed as published.
+
+## Frequently asked questions
+
+### Can the Texas AG bring a TRAIGA enforcement action against a company for an AI system it is still testing and has not launched?
+
+No. TRAIGA explicitly prohibits the AG from bringing a civil penalty action for an AI system that has not yet been deployed. Under Tex. Bus. & Comm. Code § 552.105(f), enforcement reach begins at deployment — pre-launch development and testing are outside the AG's penalty authority.
+
+### What is a Civil Investigative Demand under TRAIGA, and how does it differ from a formal lawsuit?
+
+A CID is an investigative tool the AG can use before filing any court action. Under Tex. Bus. & Comm. Code § 552.103, it can compel a company to hand over AI system descriptions, training data categories, inputs and outputs, performance metrics, known limitations, post-deployment monitoring records, and user safeguard measures — plus any other documentation the AG deems reasonably necessary. A CID is not itself a penalty; it is the information-gathering step that precedes a notice of violation and, ultimately, civil litigation.

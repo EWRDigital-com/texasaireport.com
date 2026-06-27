@@ -22,7 +22,7 @@ modalpointRelevant: true
 draft: false
 ---
 
-Colorado just rewrote the AI compliance map. On May 14, 2026, Governor Polis signed SB 26-189, repealing the state's original AI Act (SB 24-205) and replacing it with a narrower framework built around disclosure and consumer rights — no impact assessments, no duty of care. That repeal reshapes how Texas decision-makers should think about the three dominant AI legal regimes and where they diverge.
+Colorado just rewrote the AI compliance map. On May 14, 2026, Governor Polis signed [SB 26-189](https://www.troutmanprivacy.com/2026/05/colorado-legislature-passes-bill-to-repeal-and-replace-colorado-ai-act/), repealing the state's original AI Act (SB 24-205) and replacing it with a narrower framework built around disclosure and consumer rights — no impact assessments, no duty of care. That repeal reshapes how Texas decision-makers should think about the three dominant AI legal regimes and where they diverge.
 
 ## The new landscape at a glance
 
@@ -50,10 +50,20 @@ Penalties are tiered: $10,000–$12,000 for curable violations, $80,000–$200,0
 
 ## The EU's next deadline: August 2
 
-Most high-risk AI system obligations under the EU AI Act — Annex III systems, transparency rules — take effect August 2, 2026. That is six weeks out. Prohibited AI practices have been enforceable since February 2025; GPAI model rules since August 2025. A political agreement to streamline certain obligations was reached May 7, 2026, but formal EU Parliament and Council adoption had not been confirmed as of publication.
+Most high-risk AI system obligations under the [EU AI Act](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689) — Annex III systems, transparency rules — take effect August 2, 2026. That is six weeks out. Prohibited AI practices have been enforceable since February 2025; GPAI model rules since August 2025. A political agreement to streamline certain obligations was reached May 7, 2026, but formal EU Parliament and Council adoption had not been confirmed as of publication.
 
 For Texas-based companies with EU operations or EU customers, August 2 is a live deadline.
 
 ## The bottom line
 
 Three regimes, three theories of harm. Texas prohibits bad intent. Colorado mandates disclosure and consumer rights in defined sectors. The EU imposes tiered conformity obligations. None creates a private right of action. All three rely on government enforcement with cure windows before penalties attach. A compliance posture built around any one regime will leave gaps in the others — which means the starting point is still the same: know exactly which AI systems you run and where.
+
+## Frequently asked questions
+
+### Why did Colorado repeal its original AI Act rather than simply amend it?
+
+The original SB 24-205 faced compounding opposition: a December 2025 White House executive order specifically criticized Colorado's risk-tiered approach, the DOJ established an AI Litigation Task Force in January 2026, xAI sued the state, and a federal magistrate stayed SB 24-205 on April 27, 2026. The replacement bill — SB 26-189 — passed the Colorado Senate 34-1 and the House 57-6, signaling broad legislative consensus that the original framework needed to be abandoned rather than patched.
+
+### Does Colorado's new SB 26-189 require impact assessments the way the original law did?
+
+No. Impact assessments, deployer risk management programs, and the algorithmic discrimination duty of care were all eliminated in the replacement law. Colorado SB 26-189, effective January 1, 2027, relies instead on consumer notice at the point of interaction, post-adverse-outcome notice within 30 days, and consumer rights to access data and request human review — a substantially lighter compliance structure than its predecessor.

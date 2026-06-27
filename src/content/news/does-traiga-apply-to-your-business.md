@@ -24,7 +24,7 @@ draft: false
 
 TRAIGA's geographic footprint is broad. Any individual or entity that promotes, advertises, or conducts business in Texas; produces products or services used by Texas residents; or develops or deploys an AI system in Texas falls under the law — regardless of where it is headquartered. That language sweeps in out-of-state companies whose AI tools simply reach Texas users.
 
-The statute defines "AI system" expansively: any machine-based system that infers from inputs how to generate outputs — content, decisions, predictions, or recommendations — that can influence physical or virtual environments. Most enterprise AI deployments fit.
+The statute defines "[AI system](https://capitol.texas.gov/tlodocs/89R/billtext/pdf/HB00149F.pdf)" expansively: any machine-based system that infers from inputs how to generate outputs — content, decisions, predictions, or recommendations — that can influence physical or virtual environments. Most enterprise AI deployments fit.
 
 ## What duties actually apply
 
@@ -46,8 +46,18 @@ Several industries have explicit carve-outs from the anti-discrimination provisi
 
 **Hospital districts and institutions of higher education** are excluded from the definition of "government agency" for purposes of the AI disclosure requirement — meaning they do not carry the real-time consumer-disclosure duty that other state and local government entities do.
 
-**Biometric data** used for fraud prevention and cybersecurity training is carved out. And TRAIGA preempts any city or county AI ordinance, establishing a single statewide compliance standard rather than a patchwork of local rules.
+**Biometric data** used for fraud prevention and cybersecurity training is carved out. And [TRAIGA preempts any city or county AI ordinance](https://www.bakerbotts.com/thought-leadership/publications/2025/july/texas-enacts-responsible-ai-governance-act-what-companies-need-to-know), establishing a single statewide compliance standard rather than a patchwork of local rules.
 
 ## The practical read
 
 For most private Texas companies outside healthcare, the immediate compliance burden is lighter than the law's headline suggests — no disclosure obligation, no impact assessments, no B2B or employment requirements. What every covered entity does carry is the universal prohibition set and potential exposure to Attorney General investigation if a consumer AI system is alleged to have caused harm. The AG's complaint portal is required by statute to open by September 1, 2026. That is the date most compliance attorneys mark as the enforcement inflection point.
+
+## Frequently asked questions
+
+### Does TRAIGA apply to AI tools a company uses only for internal HR functions such as résumé screening or scheduling?
+
+No. TRAIGA explicitly excludes employment and B2B contexts from its disclosure, notice, and nondiscrimination requirements. As Moore & Van Allen noted, "businesses do not need to provide notices or meet specific transparency or nondiscrimination requirements with respect to individuals acting in an employment or B2B context." The universal prohibited-use rules — against behavioral manipulation, constitutional-rights infringement, intentional unlawful discrimination, and child sexual content — still apply in all contexts, but there is no disclosure or nondiscrimination affirmative duty for purely internal tools.
+
+### Are Texas universities and hospital districts required to give TRAIGA's AI interaction disclosure to students or patients?
+
+No. Hospital districts and institutions of higher education are explicitly excluded from the definition of "government agency" for purposes of TRAIGA's AI disclosure requirement under Tex. Bus. & Comm. Code § 552.001(1)-(2). They do not carry the real-time consumer-disclosure obligation that other state and local government entities do.

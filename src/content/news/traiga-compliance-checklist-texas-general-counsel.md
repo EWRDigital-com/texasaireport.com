@@ -42,7 +42,7 @@ TRAIGA provides explicit affirmative defenses. One is an internal review conduct
 
 Other affirmative defenses include red-teaming or adversarial testing, compliance with state agency guidance, and acting on feedback from developers, deployers, or stakeholders. Build the paper trail now, not in response to a civil investigative demand.
 
-A CID (civil investigative demand) under § 552.103 can require you to produce AI system descriptions, intended-use documentation, training data categories, performance metrics, known limitations, post-deployment monitoring records, and user safeguard measures — plus anything else the AG deems relevant. If you cannot produce this on short notice, that gap itself becomes an exposure.
+A CID (civil investigative demand) under [§ 552.103](https://capitol.texas.gov/tlodocs/89R/billtext/pdf/HB00149F.pdf) can require you to produce AI system descriptions, intended-use documentation, training data categories, performance metrics, known limitations, post-deployment monitoring records, and user safeguard measures — plus anything else the AG deems relevant. If you cannot produce this on short notice, that gap itself becomes an exposure.
 
 ## Step 3: Understand the penalty tiers and the cure problem
 
@@ -63,3 +63,13 @@ There is no private right of action under TRAIGA. The AG has exclusive enforceme
 The AG complaint portal is expected to open by September 1, 2026 — that's the statutory deadline under Section 8 of HB 149. No publicly reported TRAIGA enforcement actions have been filed as of late June 2026, but the office has been building enforcement infrastructure since the law was signed.
 
 The time to close documentation gaps is before the portal opens, not after the first complaint triggers a CID.
+
+## Frequently asked questions
+
+### If an end user or employee misuses an AI tool in a way that causes harm, is the company that deployed it liable under TRAIGA?
+
+Not automatically. TRAIGA includes a third-party misuse carveout: a developer or deployer cannot be held liable simply because an end user or other third party uses an AI system for a prohibited purpose. Liability attaches to the intent behind how the system was developed or deployed — not to downstream misuse by others. However, that carveout does not eliminate the deployer's obligation to have documented the system's intended safeguards.
+
+### Does TRAIGA mandate that companies use the NIST AI Risk Management Framework?
+
+No — the NIST AI RMF is not legally required. But conducting an internal review using it is one of TRAIGA's explicit statutory affirmative defenses. A company that can show it ran a documented NIST AI RMF review has a defense against enforcement, even if a violation occurred. The other affirmative defenses are red-teaming or adversarial testing, compliance with state agency guidance, and acting on feedback from developers, deployers, or stakeholders.

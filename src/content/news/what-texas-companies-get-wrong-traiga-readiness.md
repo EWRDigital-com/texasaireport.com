@@ -28,7 +28,7 @@ The headline penalty numbers — up to $200,000 per uncurable violation — are 
 
 ## The process gaps that create real risk
 
-Start with shadow AI. According to one 2026 industry estimate cited by managed IT firm CTTS, 57% of employees use consumer generative AI at work, and roughly one-third paste sensitive company data into those tools. The same source attributes an average of approximately $670,000 in added breach costs to shadow-AI incidents. Whether or not those figures hold up to scrutiny in your organization, the underlying problem is structural: most companies are surprised by how many AI tools are running across their hiring platforms, document workflows, email, and analytics — tools they didn't formally deploy and can't inventory.
+Start with shadow AI. According to [one 2026 industry estimate cited by managed IT firm CTTS](https://www.cttsonline.com/2026/06/23/managed-it-services-texas-making-traiga-compliance-workable-for-your-business-in-2026/), 57% of employees use consumer generative AI at work, and roughly one-third paste sensitive company data into those tools. The same source attributes an average of approximately $670,000 in added breach costs to shadow-AI incidents. Whether or not those figures hold up to scrutiny in your organization, the underlying problem is structural: most companies are surprised by how many AI tools are running across their hiring platforms, document workflows, email, and analytics — tools they didn't formally deploy and can't inventory.
 
 That inventory problem compounds fast. The Texas AG, on investigation, can issue a Civil Investigative Demand requiring comprehensive documentation: AI system descriptions, training data categories, inputs and outputs, performance metrics, known limitations, and post-deployment monitoring records. Companies that cannot respond face additional exposure on top of whatever triggered the inquiry.
 
@@ -57,3 +57,13 @@ Five actions that matter now:
 5. **Audit your vendors.** Review every material AI vendor relationship. If a vendor can't produce documentation of their system's inputs, outputs, and safeguards, escalate — or find a vendor who can.
 
 The enforcement calendar is no longer abstract. September 1 is nine weeks away.
+
+## Frequently asked questions
+
+### If a vendor's AI tool causes a TRAIGA violation, does liability fall on the vendor or the company that deployed it?
+
+TRAIGA's third-party misuse carveout means a developer or deployer cannot be held liable simply because an end user or other third party uses an AI system for a prohibited purpose. But that carveout does not protect a deployer from liability for its own choice to use a vendor's system. If the deploying company's configuration or use of a vendor tool results in prohibited conduct, the deployer carries exposure — which is why vendor documentation of the system's purpose, training data, inputs, outputs, and safeguards is a compliance requirement, not optional due diligence.
+
+### How does TRAIGA's spreadsheet-based compliance risk compare to a more systematic approach?
+
+Using spreadsheets to track TRAIGA compliance creates audit risk because they cannot demonstrate systematic implementation of the NIST AI Risk Management Framework — one of TRAIGA's four explicit statutory affirmative defenses. As practitioners have noted, the NIST AI RMF safe harbor requires showing a documented, structured review process; an ad hoc spreadsheet inventory is unlikely to satisfy that standard when the AG issues a Civil Investigative Demand.
