@@ -9,6 +9,7 @@ desktop.ini
 # Environment / secrets — never commit
 .env
 .env.*
+!.env.example
 *.local
 
 # Editor / IDE
