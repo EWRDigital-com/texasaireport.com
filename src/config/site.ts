@@ -10,7 +10,7 @@ export const MATT = {
   url: 'https://matthewbertram.com/',
   sameAs: ['https://matthewbertram.com/', 'https://modalpoint.com/',
            'https://www.linkedin.com/in/mattbertramlive/'],
-  bioShort: 'AI-governance practitioner and founder of EWR Digital; NIST AISI consortium member, IAPP/CAIA, holder of two provisional patents in AI governance.',
+  bioShort: 'AI-governance practitioner, president of ModalPoint, and founder of EWR Digital; NIST AISI consortium member, IAPP/CAIA, holder of two provisional patents in AI governance.',
   credentials: 'NIST AISI · IAPP/CAIA · 2 provisional patents',
 };
 export const SECTIONS = ['policy','government','business','research'] as const;

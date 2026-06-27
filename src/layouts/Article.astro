@@ -11,7 +11,7 @@ const schema = articleSchema({ title:data.title, dek:data.dek, url,
   publishDate:data.publishDate, updatedDate:data.updatedDate, image:data.heroImage, section:data.section });
 const fmt = (d:Date)=> d.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric',timeZone:'UTC'});
 ---
-<Base title={`${data.title} — Texas AI Report`} description={data.dek} image={data.heroImage}>
+<Base title={`${data.title} — Texas AI Report`} description={data.dek} image={data.heroImage} ogType="article" publishedTime={data.publishDate.toISOString()}>
   <JsonLd data={schema}/>
   <article class="col" style="padding-top:24px">
     <div class="kicker">{data.section}</div>
