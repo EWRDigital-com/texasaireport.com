@@ -18,3 +18,10 @@ desktop.ini
 # Logs / deps (not used by this static site, but guarded)
 *.log
 node_modules/
+
+.vercel
+
+.superpowers/
+
+dist/
+.astro/
