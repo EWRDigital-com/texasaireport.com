@@ -1,6 +1,6 @@
 ---
 const { entry } = Astro.props;
-const fmt=(d:Date)=>d.toLocaleDateString('en-US',{month:'short',day:'numeric'});
+const fmt=(d:Date)=>d.toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'UTC'});
 ---
 <a href={`/news/${entry.id}`} style="display:block;text-decoration:none;border-bottom:1px solid var(--line);padding:14px 0">
   <div class="kicker">{entry.data.section}</div>

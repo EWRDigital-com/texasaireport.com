@@ -17,4 +17,5 @@ const url = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
 {image && <meta property="og:image" content={image}/>}
 <meta name="twitter:card" content="summary_large_image"/>
 <JsonLd data={orgSchema()}/>
+<script defer data-domain="texasaireport.com" src="https://plausible.io/js/script.js"></script>
 </head><body><Header/><main><slot/></main><Footer/></body></html>
