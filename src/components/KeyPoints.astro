@@ -1,0 +1,7 @@
+---
+const { points } = Astro.props;
+---
+<aside style="background:#fbf7ef;border-left:4px solid var(--amber);border-radius:6px;padding:14px;margin:18px 0">
+  <div class="kicker">Why it matters</div>
+  <ul style="margin:8px 0 0;padding-left:18px">{points.map((p:string)=><li>{p}</li>)}</ul>
+</aside>

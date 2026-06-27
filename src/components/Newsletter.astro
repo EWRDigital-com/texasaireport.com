@@ -1,0 +1,10 @@
+---
+const action = import.meta.env.PUBLIC_NEWSLETTER_ACTION ?? '#';
+---
+<div id="newsletter" style="background:var(--navy);border-radius:8px;padding:16px;margin:20px 0">
+  <div style="color:#fff;font-weight:700">Get the Texas AI daily brief</div>
+  <form action={action} method="post" style="display:flex;gap:6px;margin-top:8px">
+    <input type="email" name="email" required placeholder="you@company.com" style="flex:1;border:0;border-radius:5px;padding:9px"/>
+    <button style="background:var(--amber);color:var(--ink);font-weight:800;border:0;border-radius:5px;padding:0 14px">Join</button>
+  </form>
+</div>

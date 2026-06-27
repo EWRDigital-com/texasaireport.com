@@ -1,0 +1,36 @@
+---
+import Base from './Base.astro';
+import KeyPoints from '../components/KeyPoints.astro';
+import AuthorCard from '../components/AuthorCard.astro';
+import Newsletter from '../components/Newsletter.astro';
+import JsonLd from '../components/JsonLd.astro';
+import { articleSchema } from '../lib/schema';
+import { MATT } from '../config/site';
+const { data, url } = Astro.props;
+const schema = articleSchema({ title:data.title, dek:data.dek, url,
+  publishDate:data.publishDate, updatedDate:data.updatedDate, image:data.heroImage, section:data.section });
+const fmt = (d:Date)=> d.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+---
+<Base title={`${data.title} — Texas AI Report`} description={data.dek} image={data.heroImage}>
+  <JsonLd data={schema}/>
+  <article class="col" style="padding-top:24px">
+    <div class="kicker">{data.section}</div>
+    <h1 style="font-size:30px;line-height:1.18;color:var(--navy);margin:8px 0 0">{data.title}</h1>
+    <p style="font-size:13px;color:var(--muted);margin:10px 0 0">
+      By <a href={MATT.url} rel="author" style="font-weight:700">Matt Bertram</a> ·
+      <time datetime={data.publishDate.toISOString()}>{fmt(data.publishDate)}</time>
+    </p>
+    <KeyPoints points={data.keyPoints}/>
+    {data.heroImage && <figure style="margin:0 0 16px"><img src={data.heroImage} alt={data.heroCaption ?? data.title}/>{data.heroCaption && <figcaption style="font-size:12px;color:var(--muted)">{data.heroCaption}</figcaption>}</figure>}
+    <div style="font-size:18px;line-height:1.6"><slot/></div>
+    {data.modalpointRelevant &&
+      <p style="background:#f5f8fb;border:1px solid #d8e2ee;border-radius:6px;padding:10px 12px;font-size:12px;color:#3f5168;margin:16px 0">
+        <strong>Disclosure:</strong> Texas AI Report is published by Matt Bertram, who also leads
+        <a href="https://modalpoint.com/">ModalPoint</a>, an AI-governance advisory. See our
+        <a href="/editorial-standards">editorial standards</a>.</p>}
+    <Newsletter/>
+    <AuthorCard/>
+    {data.tags.length>0 && <div style="margin-top:12px;display:flex;gap:6px;flex-wrap:wrap">{data.tags.map((t:string)=><a href={`/tags/${t.toLowerCase().replace(/\s+/g,'-')}`} style="font-size:11px;background:#eef2f6;color:var(--navy);border-radius:20px;padding:4px 10px;text-decoration:none">{t}</a>)}</div>}
+    <p style="font-size:12px;color:var(--muted);margin-top:18px;border-top:1px solid var(--line);padding-top:12px">Analysis and commentary, not legal advice.</p>
+  </article>
+</Base>
