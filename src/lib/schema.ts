@@ -6,7 +6,8 @@ const person = {
 };
 export function orgSchema() {
   return { '@context':'https://schema.org', '@type':'NewsMediaOrganization',
-    name: SITE.name, url: SITE.url, logo: SITE.logo, founder: person, slogan: SITE.tagline };
+    name: SITE.name, url: SITE.url, logo: { '@type':'ImageObject', url: SITE.logo },
+    founder: person, slogan: SITE.tagline };
 }
 export function articleSchema(a: {
   title:string; dek:string; url:string; publishDate:Date; updatedDate?:Date;

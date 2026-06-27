@@ -13,6 +13,7 @@ describe('schema', () => {
     expect(s['@type']).toBe('NewsArticle');
     expect(s.author.name).toBe('Matt Bertram');
     expect(s.author.sameAs).toContain('https://matthewbertram.com/');
+    expect(s.author.sameAs).toContain('https://modalpoint.com/');
     expect(s.datePublished).toBe('2026-06-26T00:00:00.000Z');
   });
 });
