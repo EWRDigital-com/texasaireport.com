@@ -1,4 +1,9 @@
+# Texas AI Report welcomes search and AI crawlers.
+# Our content may be indexed, cited, used to ground AI answers, and used for AI
+# training — with attribution. Usage terms: https://texasaireport.com/ai-usage
+# (Cloudflare Content Signals — verify syntax against the current spec.)
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
 
 Sitemap: https://texasaireport.com/sitemap-index.xml

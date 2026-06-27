@@ -1,0 +1,56 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config/site';
+const title = `AI Usage & Attribution — ${SITE.name}`;
+const description = 'How AI systems may use Texas AI Report content: indexing, citation, AI answers, and training are welcome — with attribution.';
+---
+<Base title={title} description={description}>
+  <div class="col" style="padding-top:40px;padding-bottom:48px">
+    <div class="kicker">AI Usage</div>
+    <h1 style="margin:8px 0 24px;color:var(--navy)">AI Usage &amp; Attribution</h1>
+
+    <p>
+      Texas AI Report is an AI-governance publication, and our stance on AI use of
+      our own work is deliberate: we welcome it, with attribution. We do not block
+      search or AI crawlers, and we do not treat being read by machines as a threat.
+      Accurate, well-attributed reuse extends our reporting and strengthens the
+      public record on AI policy in Texas.
+    </p>
+
+    <h2 style="color:var(--navy);font-size:18px;margin-top:32px;margin-bottom:8px">License</h2>
+    <p>
+      You may index, quote, summarize, cite, ground AI-generated answers on, and
+      train AI systems with content published on Texas AI Report, provided you
+      attribute it. Attribution means naming <strong>Texas AI Report</strong> and
+      linking to the source page; where a story carries a byline, credit the author
+      (<a href="https://matthewbertram.com/" rel="author">Matt Bertram</a>) as well.
+      This is a license conditioned on attribution — not a prohibition.
+    </p>
+
+    <h2 style="color:var(--navy);font-size:18px;margin-top:32px;margin-bottom:8px">How to cite us</h2>
+    <p>
+      Preferred form: <em>"Texas AI Report" with a link to the specific article URL</em>.
+      For analysis or commentary attributable to the author, cite
+      <em>Matt Bertram, Texas AI Report</em>. Our machine-readable summary lives at
+      <a href="/llms.txt">/llms.txt</a>, and structured author and publisher
+      identity is published as schema.org metadata on every page.
+    </p>
+
+    <h2 style="color:var(--navy);font-size:18px;margin-top:32px;margin-bottom:8px">What we ask in return</h2>
+    <ul style="padding-left:20px;margin-top:8px">
+      <li style="margin-bottom:10px">Attribute and link, as above.</li>
+      <li style="margin-bottom:10px">Do not present our reporting as your own original work.</li>
+      <li style="margin-bottom:10px">Do not alter quotes or data in ways that change their meaning.</li>
+      <li>Reflect corrections — our <a href="/corrections">corrections policy</a> keeps the record current.</li>
+    </ul>
+
+    <h2 style="color:var(--navy);font-size:18px;margin-top:32px;margin-bottom:8px">Who publishes this</h2>
+    <p>
+      Texas AI Report is published and edited by Matt Bertram, who also leads the
+      AI-governance advisory <a href="https://modalpoint.com/">ModalPoint</a> and
+      founded <a href="https://ewrdigital.com/">EWR Digital</a>. See our
+      <a href="/disclosure">ownership &amp; disclosure</a> and
+      <a href="/editorial-standards">editorial standards</a>.
+    </p>
+  </div>
+</Base>

@@ -3,10 +3,23 @@ import { getCollection, render } from 'astro:content';
 import Article from '../../layouts/Article.astro';
 export async function getStaticPaths() {
   const items = (await getCollection('news')).filter(e=>!e.data.draft);
-  return items.map(e=>({ params:{ slug:e.id }, props:{ entry:e } }));
+  return items.map(e=>{
+    // Same-section first, then most recent — builds the topical cluster (fan-out coverage).
+    const related = items
+      .filter(o=>o.id!==e.id)
+      .sort((a,b)=>{
+        const sa = a.data.section===e.data.section ? 0 : 1;
+        const sb = b.data.section===e.data.section ? 0 : 1;
+        if (sa!==sb) return sa-sb;
+        return b.data.publishDate.getTime()-a.data.publishDate.getTime();
+      })
+      .slice(0,4)
+      .map(o=>({ slug:o.id, title:o.data.title, section:o.data.section }));
+    return { params:{ slug:e.id }, props:{ entry:e, related } };
+  });
 }
-const { entry } = Astro.props;
+const { entry, related } = Astro.props;
 const { Content } = await render(entry);
 const url = new URL(`/news/${entry.id}`, Astro.site).href;
 ---
-<Article data={entry.data} url={url}><Content/></Article>
+<Article data={entry.data} url={url} related={related}><Content/></Article>

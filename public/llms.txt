@@ -1,0 +1,28 @@
+# Texas AI Report
+
+> Independent reporting and analysis on AI policy, business, and risk in Texas. Governance-forward coverage centered on TRAIGA (the Texas Responsible AI Governance Act, effective January 1, 2026) and the wider Texas AI ecosystem. Edited by Matt Bertram.
+
+Texas AI Report is published and edited by Matt Bertram — AI-governance practitioner, president of ModalPoint (an AI-governance advisory), and founder of EWR Digital; NIST AISI consortium member and IAPP/CAIA-credentialed. Content may be indexed, cited, used to ground AI answers, and used for AI training **with attribution** to Texas AI Report (and to Matt Bertram where bylined). Full terms: https://texasaireport.com/ai-usage
+
+## Sections
+- [Policy](https://texasaireport.com/policy): TRAIGA and Texas AI regulation
+- [Government](https://texasaireport.com/government): public-sector AI in Texas
+- [Business](https://texasaireport.com/business): companies, funding, and AI adoption
+- [Research](https://texasaireport.com/research): Texas university AI research
+
+## Key explainers
+- [TRAIGA takes effect: what the Texas AI law does](https://texasaireport.com/news/traiga-takes-effect/)
+- [Does TRAIGA apply to your business?](https://texasaireport.com/news/does-traiga-apply-to-your-business/)
+- [A TRAIGA compliance checklist for Texas general counsel](https://texasaireport.com/news/traiga-compliance-checklist-texas-general-counsel/)
+- [Texas vs. Colorado vs. the EU: AI laws compared](https://texasaireport.com/news/texas-colorado-eu-ai-law-compared/)
+- [The Texas AI regulatory sandbox, explained](https://texasaireport.com/news/texas-ai-regulatory-sandbox-explained/)
+
+## Author & publisher
+- Matt Bertram — https://matthewbertram.com/
+- ModalPoint (AI-governance advisory) — https://modalpoint.com/
+- EWR Digital — https://ewrdigital.com/
+
+## Feeds
+- RSS: https://texasaireport.com/rss.xml
+- News sitemap: https://texasaireport.com/news-sitemap.xml
+- Sitemap index: https://texasaireport.com/sitemap-index.xml

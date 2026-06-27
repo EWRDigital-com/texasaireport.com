@@ -6,7 +6,7 @@ import Newsletter from '../components/Newsletter.astro';
 import JsonLd from '../components/JsonLd.astro';
 import { articleSchema } from '../lib/schema';
 import { MATT } from '../config/site';
-const { data, url } = Astro.props;
+const { data, url, related = [] } = Astro.props;
 const schema = articleSchema({ title:data.title, dek:data.dek, url,
   publishDate:data.publishDate, updatedDate:data.updatedDate, image:data.heroImage, section:data.section });
 const fmt = (d:Date)=> d.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric',timeZone:'UTC'});
@@ -28,6 +28,14 @@ const fmt = (d:Date)=> d.toLocaleDateString('en-US',{year:'numeric',month:'long'
         <strong>Disclosure:</strong> Texas AI Report is published by Matt Bertram, who also leads
         <a href="https://modalpoint.com/">ModalPoint</a>, an AI-governance advisory. See our
         <a href="/editorial-standards">editorial standards</a>.</p>}
+    {related.length>0 &&
+      <nav aria-label="Related coverage" style="margin:24px 0;border-top:1px solid var(--line);padding-top:16px">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-bottom:10px">Related coverage</div>
+        <ul style="list-style:none;padding:0;margin:0;display:grid;gap:10px">
+          {related.map((r:any)=>
+            <li><a href={`/news/${r.slug}`} style="color:var(--navy);font-weight:600;text-decoration:none;font-size:15px;line-height:1.35">{r.title}</a></li>)}
+        </ul>
+      </nav>}
     <Newsletter/>
     <AuthorCard/>
     {data.tags.length>0 && <div style="margin-top:12px;display:flex;gap:6px;flex-wrap:wrap">{data.tags.map((t:string)=><a href={`/tags/${t.toLowerCase().replace(/\s+/g,'-')}`} style="font-size:11px;background:#eef2f6;color:var(--navy);border-radius:20px;padding:4px 10px;text-decoration:none">{t}</a>)}</div>}
