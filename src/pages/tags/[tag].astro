@@ -10,7 +10,6 @@ export async function getStaticPaths(){
   return [...tags].map(([s,label])=>({params:{tag:s},props:{label,
     items:items.filter(e=>e.data.tags.some(t=>slug(t)===s))}}));
 }
-const slug=(t:string)=>t.toLowerCase().replace(/\s+/g,'-');
 const { label, items } = Astro.props;
 ---
 <Base title={`${label} — Texas AI Report`} description={`Coverage tagged ${label}.`}>

@@ -11,6 +11,7 @@ const items=(await getCollection('news')).filter(e=>!e.data.draft && e.data.sect
 <Base title={`${section} — Texas AI Report`} description={`Texas AI ${section} coverage.`}>
   <div class="wrap" style="padding:24px 20px">
     <h1 style="text-transform:capitalize;color:var(--navy)">{section}</h1>
+    {items.length === 0 && <p style="color:var(--muted)">No articles in this section yet.</p>}
     {items.map(e=><StoryCard entry={e}/>)}
   </div>
 </Base>

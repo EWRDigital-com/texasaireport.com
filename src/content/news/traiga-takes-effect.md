@@ -5,7 +5,7 @@ section: policy
 tags: ["TRAIGA", "Texas AI law", "AI regulation", "HB 149", "compliance"]
 publishDate: 2025-06-22
 keyPoints:
-  - "Texas is now the third U.S. state with a comprehensive AI governance law, behind Colorado and Illinois."
+  - "Texas is now the third U.S. state to enact a comprehensive AI governance law."
   - "Government agencies must disclose AI interactions to consumers; healthcare providers must disclose AI use to patients."
   - "Civil penalties range from $10,000 to $200,000 per violation, enforced by the Texas Attorney General."
   - "The law bans AI systems designed to incite self-harm or facilitate criminal activity."
@@ -36,4 +36,4 @@ The effective date is January 1, 2026 — six months from signing. For organizat
 
 TRAIGA does not establish a private right of action, which limits litigation exposure but does not eliminate regulatory risk. The Attorney General's office has broad investigative authority and can move before a violation becomes public.
 
-The law's disclosure framework aligns closely with federal guidance from NIST's AI RMF and the EU AI Act's transparency tier — organizations already doing NIST-aligned documentation are better positioned.
+In practice, organizations that already maintain NIST-style AI documentation and disclosure practices will have a head start on TRAIGA's requirements.
