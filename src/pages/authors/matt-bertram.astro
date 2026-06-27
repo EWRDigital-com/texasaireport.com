@@ -1,15 +1,19 @@
 ---
 import Base from '../../layouts/Base.astro';
 import StoryCard from '../../components/StoryCard.astro';
+import JsonLd from '../../components/JsonLd.astro';
 import { getCollection } from 'astro:content';
 import { MATT, SITE } from '../../config/site';
+import { profilePageSchema } from '../../lib/schema';
 const articles = (await getCollection('news'))
   .filter(e => !e.data.draft)
   .sort((a, b) => +b.data.publishDate - +a.data.publishDate);
 const title = `${MATT.name} — Editor, ${SITE.name}`;
 const description = MATT.bioShort;
+const profileUrl = `${SITE.url}/authors/matt-bertram`;
 ---
 <Base title={title} description={description}>
+  <JsonLd data={profilePageSchema(profileUrl)}/>
   <div class="col" style="padding-top:40px;padding-bottom:48px">
     <div class="kicker">Editor</div>
     <h1 style="margin:8px 0 4px;color:var(--navy)">{MATT.name}</h1>
@@ -20,7 +24,7 @@ const description = MATT.bioShort;
 
     <p style="margin:0 0 16px">
       {MATT.bioShort} Matt leads <a href="https://modalpoint.com/">ModalPoint</a>, an
-      AI-governance advisory, and founded <a href="https://ewrdigital.com/">EWR Digital</a>,
+      AI-governance advisory, and is CEO of <a href="https://ewrdigital.com/">EWR Digital</a>,
       a digital marketing and technology agency based in Houston, Texas.
     </p>
     <p style="margin:0 0 32px">

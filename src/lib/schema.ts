@@ -11,7 +11,7 @@ const MODALPOINT = {
 };
 const person = {
   '@type': 'Person', '@id': PERSON_ID,
-  name: MATT.name, url: MATT.url, sameAs: MATT.sameAs,
+  name: MATT.name, alternateName: MATT.alternateName, url: MATT.url, sameAs: MATT.sameAs,
   jobTitle: MATT.role, description: MATT.bioShort,
   worksFor: [MODALPOINT, { '@type': 'Organization', name: 'EWR Digital', url: 'https://ewrdigital.com/' }],
   knowsAbout: ['AI governance', 'AI regulation', 'AI compliance', 'TRAIGA', 'AI policy'],
@@ -21,6 +21,18 @@ export function orgSchema() {
   return { '@context':'https://schema.org', '@type':'NewsMediaOrganization', '@id': PUBLISHER_ID,
     name: SITE.name, url: SITE.url, logo: { '@type':'ImageObject', url: SITE.logo },
     founder: person, slogan: SITE.tagline };
+}
+
+// The author hub is the one page that is ABOUT the person, so it declares a
+// ProfilePage whose mainEntity is the canonical Person node (@id at
+// matthewbertram.com). This anchors the on-site entity to the cross-domain home
+// and gives Google/AI an explicit "this page defines this person" assertion.
+export function profilePageSchema(pageUrl: string) {
+  return { '@context':'https://schema.org', '@graph': [
+    { '@type':'ProfilePage', '@id': pageUrl + '#profilepage', url: pageUrl,
+      name: `${MATT.name} — ${MATT.role}, ${SITE.name}`,
+      mainEntity: { '@id': PERSON_ID }, isPartOf: { '@id': PUBLISHER_ID } },
+    person ] };
 }
 export function articleSchema(a: {
   title:string; dek:string; url:string; publishDate:Date; updatedDate?:Date;
