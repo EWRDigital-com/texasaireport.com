@@ -1,0 +1,57 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config/site';
+const title = `Editorial Standards — ${SITE.name}`;
+const description = 'How Texas AI Report sources, verifies, and edits its reporting.';
+---
+<Base title={title} description={description}>
+  <div class="col" style="padding-top:40px;padding-bottom:48px">
+    <div class="kicker">Editorial Standards</div>
+    <h1 style="margin:8px 0 24px;color:var(--navy)">Editorial Standards</h1>
+
+    <h2 style="color:var(--navy);font-size:18px;margin-bottom:8px">Independence</h2>
+    <p>
+      Coverage decisions at Texas AI Report are made by the editor without
+      direction from advertisers, sponsors, or affiliated commercial entities.
+      The publication is affiliated with EWR Digital and ModalPoint through
+      common ownership; when a story touches one of those organizations, the
+      relationship is disclosed within the story itself.
+    </p>
+
+    <h2 style="color:var(--navy);font-size:18px;margin-top:32px;margin-bottom:8px">Sourcing</h2>
+    <p>
+      Reporting is built from primary sources: legislation and regulatory filings,
+      official agency documents, peer-reviewed research, court records, and
+      on-record statements from named individuals or organizations. Secondary
+      sources are cited and linked. We do not publish claims we cannot trace to
+      a verifiable primary source.
+    </p>
+    <p>
+      For legal and regulatory stories, facts are checked against primary
+      government or judicial sources before publication.
+    </p>
+
+    <h2 style="color:var(--navy);font-size:18px;margin-top:32px;margin-bottom:8px">AI-Assisted Workflow</h2>
+    <p>
+      Texas AI Report uses an AI-assisted newsroom workflow to support research,
+      drafting, and fact organization. <strong>Every article is reviewed and
+      edited by a human editor before publication.</strong> AI tools accelerate
+      the work; they do not replace editorial judgment or human verification of
+      facts.
+    </p>
+
+    <h2 style="color:var(--navy);font-size:18px;margin-top:32px;margin-bottom:8px">Analysis vs. Legal Advice</h2>
+    <p>
+      Texas AI Report provides analysis and commentary on AI law, policy, and
+      regulation. Nothing published here constitutes legal advice. Readers
+      facing legal questions should consult a qualified attorney.
+    </p>
+
+    <h2 style="color:var(--navy);font-size:18px;margin-top:32px;margin-bottom:8px">Corrections</h2>
+    <p>
+      We correct errors promptly and transparently. See our
+      <a href="/corrections">Corrections policy</a> for how to request a
+      correction and how corrections are marked on published articles.
+    </p>
+  </div>
+</Base>

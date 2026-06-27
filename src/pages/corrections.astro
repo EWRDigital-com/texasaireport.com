@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config/site';
+const title = `Corrections — ${SITE.name}`;
+const description = 'How to request a correction and how Texas AI Report marks corrected articles.';
+---
+<Base title={title} description={description}>
+  <div class="col" style="padding-top:40px;padding-bottom:48px">
+    <div class="kicker">Corrections</div>
+    <h1 style="margin:8px 0 24px;color:var(--navy)">Corrections Policy</h1>
+
+    <p>
+      Texas AI Report is committed to accuracy. When we get something wrong, we
+      correct it — promptly and transparently.
+    </p>
+
+    <h2 style="color:var(--navy);font-size:18px;margin-top:32px;margin-bottom:8px">How to Request a Correction</h2>
+    <p>
+      If you believe a published article contains a factual error, please email
+      <a href="mailto:corrections@texasaireport.com">corrections@texasaireport.com</a>.
+      Include the article URL, the specific claim you believe is incorrect, and
+      the source or evidence that supports the correction. We review every request.
+    </p>
+
+    <h2 style="color:var(--navy);font-size:18px;margin-top:32px;margin-bottom:8px">How Corrections Are Marked</h2>
+    <p>
+      When a material factual error is confirmed, we update the article and add
+      a correction notice at the bottom of the affected page. The notice includes
+      the date of the correction and a plain-language description of what was
+      changed and why. We do not silently edit articles to remove errors; the
+      correction notice remains permanently visible.
+    </p>
+    <p>
+      Minor corrections — such as fixing a typo or a broken link — may be made
+      without a formal correction notice at editorial discretion.
+    </p>
+
+    <h2 style="color:var(--navy);font-size:18px;margin-top:32px;margin-bottom:8px">Scope</h2>
+    <p>
+      This policy covers factual claims in news articles and analysis. It does
+      not cover matters of editorial opinion or interpretation. If you have a
+      substantive disagreement with our analysis, we welcome letters to the
+      editor at <a href="mailto:editor@texasaireport.com">editor@texasaireport.com</a>.
+    </p>
+  </div>
+</Base>

@@ -1,0 +1,39 @@
+---
+import Base from '../../layouts/Base.astro';
+import StoryCard from '../../components/StoryCard.astro';
+import { getCollection } from 'astro:content';
+import { MATT, SITE } from '../../config/site';
+const articles = (await getCollection('news'))
+  .filter(e => !e.data.draft)
+  .sort((a, b) => +b.data.publishDate - +a.data.publishDate);
+const title = `${MATT.name} — Editor, ${SITE.name}`;
+const description = MATT.bioShort;
+---
+<Base title={title} description={description}>
+  <div class="col" style="padding-top:40px;padding-bottom:48px">
+    <div class="kicker">Editor</div>
+    <h1 style="margin:8px 0 4px;color:var(--navy)">{MATT.name}</h1>
+    <p style="margin:0 0 4px;color:var(--muted);font-size:14px">{MATT.credentials}</p>
+    <p style="margin:0 0 24px">
+      <a href={MATT.url}>matthewbertram.com →</a>
+    </p>
+
+    <p style="margin:0 0 16px">
+      {MATT.bioShort} Matt leads <a href="https://modalpoint.com/">ModalPoint</a>, an
+      AI-governance advisory, and founded <a href="https://ewrdigital.com/">EWR Digital</a>,
+      a digital marketing and technology agency based in Houston, Texas.
+    </p>
+    <p style="margin:0 0 32px">
+      His reporting at Texas AI Report focuses on how AI policy, regulation, and
+      commercial adoption intersect across the state — drawing on his work inside
+      the NIST AI Safety Institute Consortium (AISI) and his IAPP AI Governance
+      Professional (AIGP) credential.
+    </p>
+
+    <h2 style="color:var(--navy);font-size:20px;border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:4px">
+      Articles
+    </h2>
+    {articles.length === 0 && <p style="color:var(--muted)">No articles published yet.</p>}
+    {articles.map(e => <StoryCard entry={e} />)}
+  </div>
+</Base>

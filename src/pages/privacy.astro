@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config/site';
+const title = `Privacy — ${SITE.name}`;
+const description = 'How Texas AI Report handles reader data, cookies, and newsletter subscriptions.';
+---
+<Base title={title} description={description}>
+  <div class="col" style="padding-top:40px;padding-bottom:48px">
+    <div class="kicker">Privacy</div>
+    <h1 style="margin:8px 0 24px;color:var(--navy)">Privacy Statement</h1>
+
+    <p>
+      Texas AI Report takes a minimal-data approach. We do not require accounts
+      to read our articles. We do not sell or rent reader data to third parties.
+      This statement explains what data we collect and why.
+    </p>
+
+    <h2 style="color:var(--navy);font-size:18px;margin-top:32px;margin-bottom:8px">Site Visits</h2>
+    <p>
+      Texas AI Report is a static website. Visiting the site does not require
+      you to log in or provide any personal information. We may use standard
+      web analytics to understand aggregate traffic (pages visited, referral
+      source, approximate geography). Analytics data is used solely to improve
+      the publication; it is not shared with advertisers.
+    </p>
+
+    <h2 style="color:var(--navy);font-size:18px;margin-top:32px;margin-bottom:8px">Newsletter</h2>
+    <p>
+      If you subscribe to the Texas AI Report newsletter, your email address is
+      collected for the sole purpose of sending you that newsletter. We do not
+      sell, rent, or share subscriber email addresses with any third party for
+      marketing purposes. You can unsubscribe at any time using the link
+      included in every newsletter email.
+    </p>
+
+    <h2 style="color:var(--navy);font-size:18px;margin-top:32px;margin-bottom:8px">Cookies</h2>
+    <p>
+      We use minimal cookies. No advertising cookies or cross-site tracking
+      cookies are set by this site. If third-party analytics is in use, it
+      may set a session or analytics cookie per its own privacy policy.
+    </p>
+
+    <h2 style="color:var(--navy);font-size:18px;margin-top:32px;margin-bottom:8px">Contact</h2>
+    <p>
+      Privacy questions can be directed to
+      <a href="mailto:editor@texasaireport.com">editor@texasaireport.com</a>.
+    </p>
+
+    <p style="color:var(--muted);font-size:13px;margin-top:40px">
+      Last updated: June 2026
+    </p>
+  </div>
+</Base>

@@ -1,0 +1,59 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config/site';
+const title = `Ownership & Disclosure — ${SITE.name}`;
+const description = 'Who owns Texas AI Report and how affiliated relationships are disclosed.';
+---
+<Base title={title} description={description}>
+  <div class="col" style="padding-top:40px;padding-bottom:48px">
+    <div class="kicker">Disclosure</div>
+    <h1 style="margin:8px 0 24px;color:var(--navy)">Ownership &amp; Disclosure</h1>
+
+    <h2 style="color:var(--navy);font-size:18px;margin-bottom:8px">Ownership</h2>
+    <p>
+      Texas AI Report is owned and operated by Matt Bertram, an individual
+      based in Houston, Texas. It is not owned by a media corporation, investor
+      syndicate, or government entity.
+    </p>
+
+    <h2 style="color:var(--navy);font-size:18px;margin-top:32px;margin-bottom:8px">Affiliated Entities</h2>
+    <p>
+      Through common ownership, Texas AI Report is affiliated with two commercial
+      organizations:
+    </p>
+    <ul style="padding-left:20px;margin-top:8px">
+      <li style="margin-bottom:12px">
+        <strong><a href="https://modalpoint.com/">ModalPoint</a></strong> — An
+        AI-governance advisory that helps organizations design, assess, and
+        implement responsible AI programs. Matt Bertram leads ModalPoint.
+      </li>
+      <li>
+        <strong><a href="https://ewrdigital.com/">EWR Digital</a></strong> — A
+        digital marketing and technology agency. Matt Bertram is the founder.
+      </li>
+    </ul>
+
+    <h2 style="color:var(--navy);font-size:18px;margin-top:32px;margin-bottom:8px">Funding</h2>
+    <p>
+      At launch, Texas AI Report is self-funded. There are no paid advertisers,
+      paid sponsors, or native advertising arrangements. If that changes, it
+      will be disclosed prominently on this page and within affected content.
+    </p>
+
+    <h2 style="color:var(--navy);font-size:18px;margin-top:32px;margin-bottom:8px">Editorial Independence</h2>
+    <p>
+      Coverage decisions are made editorially and are independent of ModalPoint's
+      or EWR Digital's commercial interests. Affiliation does not give those
+      organizations any right to approve, suppress, or shape coverage.
+    </p>
+
+    <h2 style="color:var(--navy);font-size:18px;margin-top:32px;margin-bottom:8px">Inline Disclosures</h2>
+    <p>
+      When a published story references ModalPoint, EWR Digital, or any other
+      entity with which the publisher has a material relationship, that
+      relationship is disclosed inline within the article — not only on this
+      page. Readers should not have to navigate here to know about a potential
+      conflict of interest in a specific story.
+    </p>
+  </div>
+</Base>

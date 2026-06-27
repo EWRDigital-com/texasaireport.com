@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config/site';
+const title = `Contact — ${SITE.name}`;
+const description = 'How to reach the Texas AI Report editorial team.';
+---
+<Base title={title} description={description}>
+  <div class="col" style="padding-top:40px;padding-bottom:48px">
+    <div class="kicker">Contact</div>
+    <h1 style="margin:8px 0 24px;color:var(--navy)">Contact</h1>
+
+    <p>
+      Texas AI Report is a small, independent publication. We read every message
+      we receive, though response time may vary.
+    </p>
+
+    <h2 style="color:var(--navy);font-size:18px;margin-top:32px;margin-bottom:8px">Editorial &amp; General Inquiries</h2>
+    <p>
+      For story feedback, editorial questions, or general correspondence, email
+      the editor at:
+    </p>
+    <p style="font-size:18px;font-weight:700">
+      <a href="mailto:editor@texasaireport.com">editor@texasaireport.com</a>
+    </p>
+
+    <h2 style="color:var(--navy);font-size:18px;margin-top:32px;margin-bottom:8px">News Tips</h2>
+    <p>
+      Have a tip about an AI policy development, government contract, regulatory
+      action, or business story in Texas? We want to hear it. Confidential
+      sources are kept confidential.
+    </p>
+    <p style="font-size:18px;font-weight:700">
+      <a href="mailto:tips@texasaireport.com">tips@texasaireport.com</a>
+    </p>
+
+    <h2 style="color:var(--navy);font-size:18px;margin-top:32px;margin-bottom:8px">Corrections</h2>
+    <p>
+      To request a correction to a published article, see our
+      <a href="/corrections">Corrections policy</a> and email
+      <a href="mailto:corrections@texasaireport.com">corrections@texasaireport.com</a>.
+    </p>
+
+    <h2 style="color:var(--navy);font-size:18px;margin-top:32px;margin-bottom:8px">About the Publisher</h2>
+    <p>
+      Texas AI Report is published by <a href="/authors/matt-bertram">Matt Bertram</a>
+      in Houston, Texas. For more on the publication's mission and funding, see
+      <a href="/about">About</a> and <a href="/disclosure">Ownership &amp; Disclosure</a>.
+    </p>
+  </div>
+</Base>
