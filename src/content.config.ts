@@ -13,6 +13,7 @@ const news = defineCollection({
     heroImage: z.string().optional(),
     heroCaption: z.string().optional(),
     keyPoints: z.array(z.string()).min(2).max(4),
+    faqs: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
     sources: z.array(z.object({ label: z.string(), url: z.string().url() })).default([]),
     modalpointRelevant: z.boolean().default(false),
     draft: z.boolean().default(false),

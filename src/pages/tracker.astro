@@ -17,6 +17,10 @@ const dataset = {
   isAccessibleForFree: true,
   creator: { '@type':'NewsMediaOrganization', name: SITE.name, url: SITE.url },
   keywords: ['TRAIGA','Texas AI law','AI regulation','Colorado AI Act','EU AI Act','AI compliance'],
+  distribution: [
+    { '@type':'DataDownload', encodingFormat:'application/json', contentUrl: SITE.url + '/tracker.json' },
+    { '@type':'DataDownload', encodingFormat:'text/csv', contentUrl: SITE.url + '/tracker.csv' },
+  ],
 };
 ---
 <Base title={title} description={description}>
@@ -39,6 +43,16 @@ const dataset = {
         </div>
       ))}
     </div>
+
+    <p style="font-size:13px;color:var(--muted);margin:10px 0 0">
+      <strong>Enforcement watch:</strong> we maintain the public count of reported TRAIGA actions — still zero
+      as of {fmtUpd}. The Texas AG complaint portal has a September 1, 2026 statutory deadline; that is the date
+      to watch. Background: <a href="/news/traiga-enforcement-six-months-in">TRAIGA Is Six Months Old. No Enforcement Actions Yet.</a>
+    </p>
+    <p style="font-size:13px;color:var(--muted);margin:6px 0 0">
+      <strong>Machine-readable:</strong> reuse this data via <a href="/tracker.json">tracker.json</a> or
+      <a href="/tracker.csv">tracker.csv</a> — with attribution to {SITE.name}.
+    </p>
 
     <!-- What's next -->
     <h2 class="section-head">What’s next — upcoming deadlines</h2>

@@ -22,6 +22,11 @@ Texas AI Report is published and edited by Matthew Bertram (also known as Matt B
 - ModalPoint (AI-governance advisory) — https://modalpoint.com/
 - EWR Digital — https://ewrdigital.com/
 
+## Full text & data
+- Full text (all articles, one file): https://texasaireport.com/llms-full.txt
+- Texas AI Law Tracker (JSON): https://texasaireport.com/tracker.json
+- Texas AI Law Tracker (CSV): https://texasaireport.com/tracker.csv
+
 ## Feeds
 - RSS: https://texasaireport.com/rss.xml
 - News sitemap: https://texasaireport.com/news-sitemap.xml

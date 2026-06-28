@@ -4,15 +4,17 @@ import KeyPoints from '../components/KeyPoints.astro';
 import AuthorCard from '../components/AuthorCard.astro';
 import Newsletter from '../components/Newsletter.astro';
 import JsonLd from '../components/JsonLd.astro';
-import { articleSchema } from '../lib/schema';
+import { articleSchema, faqPageSchema } from '../lib/schema';
 import { MATT } from '../config/site';
 const { data, url, related = [] } = Astro.props;
 const schema = articleSchema({ title:data.title, dek:data.dek, url,
   publishDate:data.publishDate, updatedDate:data.updatedDate, image:data.heroImage, section:data.section });
+const faqs = data.faqs ?? [];
 const fmt = (d:Date)=> d.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric',timeZone:'UTC'});
 ---
 <Base title={`${data.title} — Texas AI Report`} description={data.dek} image={data.heroImage} ogType="article" publishedTime={data.publishDate.toISOString()}>
   <JsonLd data={schema}/>
+  {faqs.length>0 && <JsonLd data={faqPageSchema(faqs)}/>}
   <article class="col" style="padding-top:24px">
     <div class="kicker">{data.section}</div>
     <h1 style="font-size:30px;line-height:1.18;color:var(--navy);margin:8px 0 0">{data.title}</h1>
@@ -24,6 +26,17 @@ const fmt = (d:Date)=> d.toLocaleDateString('en-US',{year:'numeric',month:'long'
     <KeyPoints points={data.keyPoints}/>
     {data.heroImage && <figure style="margin:0 0 16px"><img src={data.heroImage} alt={data.heroCaption ?? data.title}/>{data.heroCaption && <figcaption style="font-size:12px;color:var(--muted)">{data.heroCaption}</figcaption>}</figure>}
     <div style="font-size:18px;line-height:1.6"><slot/></div>
+    {faqs.length>0 &&
+      <section aria-label="Frequently asked questions" style="margin:28px 0 0;border-top:1px solid var(--line);padding-top:18px">
+        <h2 style="font-size:21px;color:var(--navy);margin:0 0 12px">Frequently asked questions</h2>
+        <div style="display:grid;gap:16px">
+          {faqs.map((f:{q:string;a:string})=>
+            <div>
+              <h3 style="font-size:16px;color:var(--navy);margin:0 0 5px">{f.q}</h3>
+              <p style="font-size:15px;line-height:1.55;color:#27313f;margin:0">{f.a}</p>
+            </div>)}
+        </div>
+      </section>}
     {data.modalpointRelevant &&
       <p style="background:#f5f8fb;border:1px solid #d8e2ee;border-radius:6px;padding:10px 12px;font-size:12px;color:#3f5168;margin:16px 0">
         <strong>Disclosure:</strong> Texas AI Report is published by {MATT.name}, who also leads
