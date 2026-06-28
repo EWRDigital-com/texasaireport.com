@@ -26,14 +26,13 @@ export const MATT = {
     'https://gravatar.com/mattbertramlive',
     'https://www.facebook.com/mattbertramlive1',
     'https://www.instagram.com/matt_bertram_live/',
-    'https://www.ewrdigital.com/author/matthew-bertram/',
     'https://bestseopodcast.com/',
     'https://podcasts.apple.com/us/podcast/id303672420',
     'https://isni.org/isni/0000000530444216',
     'https://www.goodreads.com/author/show/70950946.Matthew_Bertram',
     'https://github.com/mattbertramlive',
   ],
-  bioShort: 'AI-governance practitioner, president of ModalPoint, and CEO of EWR Digital; NIST AISI consortium member, IAPP/CAIA, holder of two provisional patents in AI governance.',
+  bioShort: 'AI-governance practitioner and president of ModalPoint; NIST AISI consortium member, IAPP/CAIA, holder of two provisional patents in AI governance.',
   credentials: 'NIST AISI · IAPP/CAIA · 2 provisional patents',
 };
 export const SECTIONS = ['policy','government','business','research'] as const;
