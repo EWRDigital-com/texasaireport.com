@@ -38,6 +38,16 @@ export function profilePageSchema(pageUrl: string) {
       mainEntity: { '@id': PERSON_ID }, isPartOf: { '@id': PUBLISHER_ID } },
     person ] };
 }
+// FAQPage structured data — emitted only when an article carries faqs.
+// Plain-text Q&A is what Google/AI extract for People-Also-Ask and AI answers.
+export function faqPageSchema(faqs: { q: string; a: string }[]) {
+  return { '@context':'https://schema.org', '@type':'FAQPage',
+    mainEntity: faqs.map(f => ({
+      '@type':'Question', name: f.q,
+      acceptedAnswer: { '@type':'Answer', text: f.a },
+    })) };
+}
+
 export function articleSchema(a: {
   title:string; dek:string; url:string; publishDate:Date; updatedDate?:Date;
   image?:string; section:string;
