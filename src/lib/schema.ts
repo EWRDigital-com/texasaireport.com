@@ -14,7 +14,6 @@ const person = {
   '@type': 'Person', '@id': PERSON_ID,
   name: MATT.name, alternateName: MATT.alternateName, url: MATT.url, sameAs: MATT.sameAs,
   worksFor: [
-    { '@id': 'https://www.ewrdigital.com/#organization' },
     { '@id': 'https://modalpoint.com/#organization' },
     { '@id': 'https://oggn.com/#organization' },
   ],
