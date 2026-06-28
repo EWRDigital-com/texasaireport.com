@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+import JsonLd from '../components/JsonLd.astro';
+import { SITE } from '../config/site';
+import { terms } from '../data/glossary';
+
+const title = `AI Governance Glossary — TRAIGA & Texas AI Law Terms — ${SITE.name}`;
+const description = 'Plain-English definitions of the key terms in Texas and U.S. AI governance — TRAIGA, prohibited uses, disclosure duties, the NIST safe harbor, the DIR sandbox, and more.';
+
+const sorted = [...terms].sort((a,b)=>a.term.localeCompare(b.term));
+const setUrl = SITE.url + '/glossary';
+const schema = {
+  '@context':'https://schema.org','@type':'DefinedTermSet',
+  '@id': setUrl + '#glossary', name:'AI Governance Glossary', url:setUrl,
+  hasDefinedTerm: sorted.map(t => ({
+    '@type':'DefinedTerm', name:t.term, description:t.short,
+    url: setUrl + '#' + t.slug, inDefinedTermSet: { '@id': setUrl + '#glossary' },
+  })),
+};
+---
+<Base title={title} description={description}>
+  <JsonLd data={schema}/>
+  <div class="col" style="padding-top:36px;padding-bottom:56px">
+    <div class="kicker">Reference</div>
+    <h1 style="margin:8px 0 8px;color:var(--navy)">AI Governance Glossary</h1>
+    <p style="font-size:18px;color:var(--muted);margin:0 0 8px">
+      Plain-English definitions of the terms that come up most in Texas and U.S. AI law.
+    </p>
+
+    <div class="az">
+      {sorted.map(t => <a href={`#${t.slug}`}>{t.term}</a>)}
+    </div>
+
+    <div>
+      {sorted.map(t => (
+        <div class="term" id={t.slug}>
+          <h3>{t.term}</h3>
+          <p style="margin:0;color:var(--ink)">{t.short}</p>
+        </div>
+      ))}
+    </div>
+
+    <hr style="margin:32px 0 20px;border:none;border-top:1px solid var(--line)"/>
+    <p style="font-size:13px;color:var(--muted)">
+      These definitions restate facts from our reporting and are analysis, not legal advice.
+      See the <a href="/traiga">TRAIGA Guide</a>, the <a href="/tracker">Texas AI Law Tracker</a>,
+      and the <a href="/traiga-checker">scope checker</a>.
+    </p>
+  </div>
+</Base>

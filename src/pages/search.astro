@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config/site';
+const title = `Search — ${SITE.name}`;
+const description = 'Search Texas AI Report — articles, the TRAIGA guide, the law tracker, and the glossary.';
+---
+<Base title={title} description={description}>
+  <div class="col" style="padding-top:36px;padding-bottom:56px">
+    <div class="kicker">Search</div>
+    <h1 style="margin:8px 0 12px;color:var(--navy)">Search Texas AI Report</h1>
+    <link rel="stylesheet" href="/pagefind/pagefind-ui.css"/>
+    <div id="search"></div>
+    <p id="search-fallback" style="color:var(--muted);font-size:14px;margin-top:14px">
+      If results don’t load, browse <a href="/tracker">the Tracker</a>,
+      <a href="/traiga">TRAIGA Guide</a>, or <a href="/glossary">glossary</a>.
+    </p>
+    <script is:inline src="/pagefind/pagefind-ui.js"></script>
+    <script is:inline>
+      window.addEventListener('DOMContentLoaded', () => {
+        if (window.PagefindUI) {
+          new window.PagefindUI({ element: '#search', showSubResults: true, showImages: false });
+          const fb = document.getElementById('search-fallback');
+          if (fb) fb.remove();
+        }
+      });
+    </script>
+  </div>
+</Base>

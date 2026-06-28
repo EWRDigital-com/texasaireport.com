@@ -22,4 +22,4 @@ const ogImage = new URL(image ?? '/og-default.png', Astro.site).href;
 <meta name="twitter:description" content={description}/><meta name="twitter:image" content={ogImage}/>
 <JsonLd data={orgSchema()}/>
 <script defer data-domain="texasaireport.com" src="https://plausible.io/js/script.js"></script>
-</head><body><Header/><main><slot/></main><Footer/></body></html>
+</head><body><Header/><main data-pagefind-body><slot/></main><Footer/></body></html>

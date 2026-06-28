@@ -1,0 +1,187 @@
+---
+import Base from '../layouts/Base.astro';
+import JsonLd from '../components/JsonLd.astro';
+import { SITE } from '../config/site';
+const title = `Does TRAIGA Apply to My Business? — Free Scope Checker — ${SITE.name}`;
+const description = 'Answer a few questions to see which parts of the Texas Responsible AI Governance Act (TRAIGA) apply to your organization — prohibited uses, disclosure duties, and carve-outs. Not legal advice.';
+
+const faq = {
+  '@context':'https://schema.org','@type':'FAQPage',
+  mainEntity:[
+    { '@type':'Question', name:'Does TRAIGA apply to my business?',
+      acceptedAnswer:{ '@type':'Answer', text:'TRAIGA applies to any entity that does business in Texas, offers products or services to Texas residents, or develops or deploys an AI system in Texas. Its universal prohibited-use rules apply to everyone in scope; consumer AI-disclosure duties fall only on government agencies and healthcare providers. B2B and employment-context AI is out of scope for disclosure and nondiscrimination duties.' } },
+    { '@type':'Question', name:'Do private businesses have a TRAIGA disclosure duty?',
+      acceptedAnswer:{ '@type':'Answer', text:'No. Private non-healthcare businesses face no consumer-facing AI disclosure requirement; that provision was removed from the final bill. The universal prohibited uses still apply.' } },
+  ],
+};
+---
+<Base title={title} description={description}>
+  <JsonLd data={faq}/>
+  <div class="col" style="padding-top:36px;padding-bottom:56px">
+    <div class="kicker">Free Tool</div>
+    <h1 style="margin:8px 0 8px;color:var(--navy)">Does TRAIGA apply to my business?</h1>
+    <p style="font-size:18px;color:var(--muted);margin:0 0 4px">
+      Answer up to three questions to see which parts of the Texas Responsible AI Governance Act apply to you.
+    </p>
+    <p style="font-size:13px;color:var(--muted);margin:0 0 8px">
+      Analysis and commentary, <strong>not legal advice</strong>. Based on our
+      <a href="/news/does-traiga-apply-to-your-business">TRAIGA scope guide</a>.
+    </p>
+
+    <div id="checker" aria-live="polite"></div>
+
+    <noscript>
+      <div class="q-card">
+        <p>This checker needs JavaScript. Read the full scope guide instead:
+        <a href="/news/does-traiga-apply-to-your-business">Does TRAIGA Apply to Your Business?</a></p>
+      </div>
+    </noscript>
+
+    <hr style="margin:32px 0 20px;border:none;border-top:1px solid var(--line)"/>
+    <p style="font-size:13px;color:var(--muted)">
+      This tool restates the scope rules in our reporting and does not create an attorney-client relationship.
+      For a binding determination, consult counsel. See also the
+      <a href="/tracker">Texas AI Law Tracker</a> and <a href="/glossary">glossary</a>.
+    </p>
+  </div>
+
+  <script>
+    type Ans = Record<string,string>;
+    const steps = [
+      { id:'nexus',
+        q:'Does your organization do business in Texas, offer products or services to Texas residents, or develop or deploy AI in Texas?',
+        help:'TRAIGA is triggered by a Texas connection — regardless of where you are headquartered.',
+        options:[ {label:'Yes — at least one of these', v:'yes'}, {label:'No — none of these', v:'no'} ] },
+      { id:'type',
+        q:'Which best describes your organization?',
+        options:[
+          {label:'State or local government agency', v:'gov'},
+          {label:'Hospital district or public university / college', v:'eduhosp'},
+          {label:'Healthcare provider (clinical treatment)', v:'health'},
+          {label:'Insurer or federally-insured bank', v:'finins'},
+          {label:'Private business (something else)', v:'private'},
+        ] },
+      { id:'context',
+        q:'How does your AI interact with people?',
+        options:[
+          {label:'Consumer-facing — it interacts with or decides about the public, customers, or patients', v:'consumer'},
+          {label:'Internal only — employees, B2B, or back-office use', v:'internal'},
+        ] },
+    ];
+
+    const PROHIBITED = 'Prohibited uses (apply to <strong>every</strong> covered entity): you may not deploy AI with intent to manipulate users toward self-harm or crime, infringe constitutional rights, commit intentional unlawful discrimination, or produce unlawful deepfakes or child sexual content.';
+
+    function computeResult(a: Ans){
+      if (a.nexus === 'no') {
+        return {
+          badge:'Likely out of scope',
+          lead:'With no Texas nexus, TRAIGA’s duties are not triggered for you today.',
+          applies:[ 'TRAIGA is triggered by doing business in Texas, serving Texas residents, or developing/deploying AI in Texas. If you expand into any of these, reassess.' ],
+          checklist:[ 'Re-run this check if you begin serving Texas residents or operating in Texas.' ],
+        };
+      }
+      const applies = [PROHIBITED];
+      const checklist = [
+        'Inventory the AI systems you develop or deploy that reach Texas.',
+        'Adopt the NIST AI Risk Management Framework — TRAIGA gives an explicit safe harbor for internal review under it.',
+        'Document red-teaming / adversarial testing (an affirmative defense under TRAIGA).',
+        'Map your exposure to the Texas AG complaint process (portal due Sep 1, 2026).',
+      ];
+      let badge = 'Limited TRAIGA duties';
+      let lead = 'You’re in scope. The universal prohibited-use rules apply; your disclosure duties are limited.';
+
+      if (a.type === 'gov') {
+        applies.push('Government entities face two extra prohibitions: AI social scoring and biometric identification without consent.');
+        if (a.context === 'consumer') {
+          badge = 'TRAIGA applies to you';
+          lead = 'As a government agency using consumer-facing AI, you carry an active disclosure duty.';
+          applies.push('Government AI-interaction disclosure: tell consumers — before or at the time of interaction, in plain English, free of dark patterns — when an AI system is involved. No consent required, just notice.');
+          checklist.unshift('Deploy a clear, conspicuous AI-interaction disclosure at every consumer touchpoint.');
+        } else {
+          applies.push('Internal/employee/B2B use carries no consumer disclosure duty — but the government prohibited-use rules still apply.');
+        }
+      } else if (a.type === 'eduhosp') {
+        applies.push('Hospital districts and institutions of higher education are excluded from the “government agency” definition for TRAIGA’s disclosure duty — so you do NOT carry the real-time consumer-disclosure obligation other government entities do (Tex. Bus. & Comm. Code § 552.001(1)–(2)).');
+      } else if (a.type === 'health') {
+        badge = 'TRAIGA applies to you';
+        lead = 'As a healthcare provider, you carry the treatment-disclosure duty.';
+        applies.push('Healthcare AI disclosure: disclose AI use in treatment on the date of service (or as soon as reasonably possible in emergencies). It can be embedded in standard intake forms.');
+        checklist.unshift('Add AI-use disclosure to your patient intake / consent forms.');
+      } else if (a.type === 'finins') {
+        applies.push('No consumer-facing AI disclosure duty. As an insurer under state insurance law or a federally-insured bank, you are exempt from / deemed compliant with TRAIGA’s anti-discrimination provision when you follow your existing regulatory regime (§ 552.056(d)–(e)).');
+      } else { // private
+        applies.push('No consumer-facing AI disclosure duty — that provision was removed from the final bill. You still carry the universal prohibitions.');
+      }
+
+      if (a.context === 'internal' && (a.type === 'private' || a.type === 'health' || a.type === 'finins')) {
+        applies.push('B2B and employment-context AI is explicitly out of scope for disclosure and nondiscrimination duties — only the universal prohibited uses apply.');
+      }
+      return { badge, lead, applies, checklist };
+    }
+
+    const root = document.getElementById('checker');
+    let answers: Ans = {};
+    let step = 0;
+
+    function el(html: string){ const d=document.createElement('div'); d.innerHTML=html.trim(); return d.firstElementChild as HTMLElement; }
+
+    function renderStep(){
+      if (!root) return;
+      const s = steps[step];
+      root.innerHTML='';
+      const card = el(`<div class="q-card"></div>`);
+      card.appendChild(el(`<div class="progress">Question ${step+1} of ${steps.length}</div>`));
+      card.appendChild(el(`<h2 style="color:var(--navy);font-size:20px;margin:8px 0 4px">${s.q}</h2>`));
+      if ((s as any).help) card.appendChild(el(`<p style="color:var(--muted);font-size:14px;margin:0 0 8px">${(s as any).help}</p>`));
+      s.options.forEach(o=>{
+        const b = el(`<button class="opt" type="button">${o.label}</button>`);
+        b.addEventListener('click', ()=>{ answers[s.id]=o.v; advance(); });
+        card.appendChild(b);
+      });
+      if (step>0){
+        const back = el(`<button class="btn-ghost" type="button" style="margin-top:10px">← Back</button>`);
+        back.addEventListener('click', ()=>{ step--; renderStep(); });
+        card.appendChild(back);
+      }
+      root.appendChild(card);
+    }
+
+    function advance(){
+      // short-circuit: no Texas nexus ends immediately
+      if (steps[step].id==='nexus' && answers.nexus==='no'){ renderResult(); return; }
+      if (step < steps.length-1){ step++; renderStep(); } else { renderResult(); }
+    }
+
+    function renderResult(){
+      if (!root) return;
+      const r = computeResult(answers);
+      root.innerHTML='';
+      const card = el(`<div class="q-card"></div>`);
+      card.appendChild(el(`<span class="result-badge">${r.badge}</span>`));
+      card.appendChild(el(`<p style="font-size:18px;color:var(--ink);margin:14px 0 6px"><strong>${r.lead}</strong></p>`));
+      card.appendChild(el(`<h3 style="color:var(--navy);font-size:15px;margin:16px 0 6px">What applies to you</h3>`));
+      const ul = el(`<ul style="padding-left:20px;margin:0"></ul>`);
+      r.applies.forEach(x=> ul.appendChild(el(`<li style="margin-bottom:8px">${x}</li>`)));
+      card.appendChild(ul);
+      card.appendChild(el(`<h3 style="color:var(--navy);font-size:15px;margin:16px 0 6px">Your next steps</h3>`));
+      const cl = el(`<ul style="padding-left:20px;margin:0"></ul>`);
+      r.checklist.forEach(x=> cl.appendChild(el(`<li style="margin-bottom:8px">${x}</li>`)));
+      card.appendChild(cl);
+
+      card.appendChild(el(`
+        <div style="background:var(--navy);border-radius:8px;padding:16px;margin:18px 0 4px">
+          <div style="color:#fff;font-weight:700;margin-bottom:8px">Want a TRAIGA readiness review?</div>
+          <a href="https://modalpoint.com/" rel="noopener noreferrer" class="btn">Talk to ModalPoint →</a>
+          <a href="#newsletter" class="btn-ghost" style="background:#fff;margin-left:8px">Get the daily brief</a>
+        </div>`));
+      card.appendChild(el(`<p style="font-size:13px;color:var(--muted);margin-top:12px">
+        Analysis only, not legal advice. Full detail: <a href="/news/does-traiga-apply-to-your-business">TRAIGA scope guide</a> · <a href="/tracker">Tracker</a>.</p>`));
+      const restart = el(`<button class="btn-ghost" type="button">↺ Start over</button>`);
+      restart.addEventListener('click', ()=>{ answers={}; step=0; renderStep(); });
+      card.appendChild(restart);
+      root.appendChild(card);
+    }
+
+    renderStep();
+  </script>
+</Base>

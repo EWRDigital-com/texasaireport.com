@@ -1,54 +1,123 @@
 ---
 import Base from '../layouts/Base.astro';
-import { SITE } from '../config/site';
+import { SITE, MATT, PHOTOS } from '../config/site';
 const title = `About — ${SITE.name}`;
-const description = 'What Texas AI Report is, who publishes it, and how it is funded.';
+const description = 'Our mission: accurate, independent reporting on AI policy, business, and risk in Texas — explained well enough to act on.';
+const beats = [
+  { key: 'Policy', photo: PHOTOS.capitol, blurb: 'TRAIGA, the DIR sandbox, and how Texas AI law actually works in practice.' },
+  { key: 'Business', photo: PHOTOS.houston, blurb: 'AI funding, deployment, and the compliance decisions Texas companies face.' },
+  { key: 'Government & Texas', photo: PHOTOS.austin, blurb: 'State agency adoption, enforcement, and where Texas fits the national map.' },
+];
 ---
 <Base title={title} description={description}>
-  <div class="col" style="padding-top:40px;padding-bottom:48px">
-    <div class="kicker">About</div>
-    <h1 style="margin:8px 0 24px;color:var(--navy)">About Texas AI Report</h1>
+  <div class="wrap" style="padding:24px 20px 8px">
+    <!-- Hero band -->
+    <div class="band">
+      <img src={PHOTOS.austin.src} alt={PHOTOS.austin.alt} width="1280" height="569" loading="eager"/>
+      <div class="overlay">
+        <div class="kicker" style="color:var(--amber)">About</div>
+        <h1>About Texas AI Report</h1>
+        <p>Independent reporting on AI policy, business, and risk in Texas — explained well enough to act on.</p>
+      </div>
+    </div>
+    <p class="photo-credit">Photo: <a href={PHOTOS.austin.href} rel="noopener noreferrer">{PHOTOS.austin.credit}</a>, {PHOTOS.austin.license}</p>
+  </div>
 
-    <h2 style="color:var(--navy);font-size:18px;margin-bottom:8px">What we are</h2>
+  <div class="col" style="padding-bottom:8px">
+    <!-- Mission -->
+    <h2 class="section-head" style="margin-top:24px">Our mission</h2>
+    <p style="font-size:19px;line-height:1.55;color:var(--ink)">
+      AI policy is too consequential to be explained badly. Texas AI Report exists to give
+      business leaders, policy practitioners, and informed Texans accurate, independently
+      sourced reporting on what is actually happening with AI law and deployment in Texas —
+      not what the press release says.
+    </p>
     <p>
-      Texas AI Report is an independent news publication covering artificial
-      intelligence policy, business, and risk in Texas. Our reporting focuses on
-      how AI regulation, government adoption, and commercial deployment affect
-      individuals, companies, and institutions across the state — and how Texas
-      fits into the broader national and global AI governance landscape.
+      We cover how AI regulation, government adoption, and commercial deployment affect
+      individuals, companies, and institutions across the state — and how Texas fits into
+      the broader national and global AI governance landscape. Every factual claim in our
+      reporting traces to a named primary or secondary source.
+    </p>
+  </div>
+
+  <!-- Beat photo strip -->
+  <div class="wrap" style="padding:8px 20px">
+    <div class="beat-strip">
+      {beats.map(b => (
+        <figure style="margin:0">
+          <img src={b.photo.src} alt={b.photo.alt} width="500" height="170" loading="lazy"/>
+          <div class="kicker" style="margin-top:8px">{b.key}</div>
+          <p style="font-size:14px;color:var(--muted);margin:4px 0 0">{b.blurb}</p>
+        </figure>
+      ))}
+    </div>
+    <p class="photo-credit">
+      Photos: <a href={PHOTOS.capitol.href} rel="noopener noreferrer">{PHOTOS.capitol.credit}</a> ({PHOTOS.capitol.license}) ·
+      <a href={PHOTOS.houston.href} rel="noopener noreferrer">{PHOTOS.houston.credit}</a> ({PHOTOS.houston.license}) ·
+      <a href={PHOTOS.austin.href} rel="noopener noreferrer">{PHOTOS.austin.credit}</a> ({PHOTOS.austin.license}), via Wikimedia Commons.
+    </p>
+  </div>
+
+  <div class="col" style="padding-bottom:48px">
+    <!-- What we cover -->
+    <h2 class="section-head">What we cover</h2>
+    <div class="cards">
+      <a class="card" href="/policy" style="text-decoration:none">
+        <div class="kicker">Policy</div>
+        <p style="margin:6px 0 0;color:var(--ink)">AI law, regulation, and the rules that govern deployment in Texas.</p>
+      </a>
+      <a class="card" href="/government" style="text-decoration:none">
+        <div class="kicker">Government</div>
+        <p style="margin:6px 0 0;color:var(--ink)">How Texas agencies adopt, disclose, and are held accountable for AI.</p>
+      </a>
+      <a class="card" href="/business" style="text-decoration:none">
+        <div class="kicker">Business</div>
+        <p style="margin:6px 0 0;color:var(--ink)">Funding, commercial deployment, and corporate compliance.</p>
+      </a>
+      <a class="card" href="/research" style="text-decoration:none">
+        <div class="kicker">Research</div>
+        <p style="margin:6px 0 0;color:var(--ink)">What Texas universities and labs are building and studying.</p>
+      </a>
+    </div>
+
+    <!-- How we work -->
+    <h2 class="section-head">How we work</h2>
+    <p>
+      This is YMYL legal and regulatory coverage, so we hold it to a strict standard: named
+      sources, dated facts, and visible corrections. Read our
+      <a href="/editorial-standards">editorial standards</a>,
+      <a href="/corrections">corrections policy</a>,
+      <a href="/disclosure">ownership &amp; disclosure</a>, and
+      <a href="/ai-usage">AI usage</a> policy. Our reporting is analysis and commentary,
+      not legal advice.
     </p>
 
-    <h2 style="color:var(--navy);font-size:18px;margin-top:32px;margin-bottom:8px">Mission</h2>
+    <!-- Publisher & Editor (full credentials live here, lower on the page) -->
+    <h2 class="section-head">Publisher &amp; editor</h2>
     <p>
-      We believe AI policy is too consequential to be explained badly. Our mission
-      is to provide accurate, independently sourced reporting and analysis for
-      business leaders, policy practitioners, and informed Texans who need to
-      understand what is actually happening — not what the press release says.
+      Texas AI Report is owned and operated by <a href={MATT.url} rel="noopener noreferrer">{MATT.name}</a>,
+      an AI-governance practitioner based in Houston, Texas. He is a NIST AI Safety Institute
+      Consortium (AISI) participant, holds the IAPP AI Governance Professional (AIGP)
+      credential, and is the holder of two provisional patents in AI governance. He is the
+      CEO of <a href="https://ewrdigital.com/" rel="noopener noreferrer">EWR Digital</a> and
+      leads <a href="https://modalpoint.com/" rel="noopener noreferrer">ModalPoint</a>, an
+      AI-governance advisory.
+    </p>
+    <p style="font-size:13px;color:var(--muted)">{MATT.credentials}</p>
+
+    <!-- Funding & independence -->
+    <h2 class="section-head">Funding &amp; independence</h2>
+    <p>
+      At launch, Texas AI Report is self-funded. It is affiliated with EWR Digital and
+      ModalPoint through common ownership. There are currently no paid advertisers or
+      sponsors. Coverage decisions are made editorially and are independent of ModalPoint's
+      or EWR Digital's commercial interests. When a story references an affiliated entity,
+      that relationship is disclosed inline. See our full
+      <a href="/disclosure">Ownership &amp; Disclosure</a> page.
     </p>
 
-    <h2 style="color:var(--navy);font-size:18px;margin-top:32px;margin-bottom:8px">Publisher &amp; Editor</h2>
-    <p>
-      Texas AI Report is owned and operated by <a href="/authors/matt-bertram">Matthew Bertram</a>,
-      an AI-governance practitioner based in Houston, Texas. Matt is a
-      NIST AI Safety Institute Consortium (AISI) participant, holds the IAPP AI
-      Governance Professional (AIGP) credential, and is the holder of two
-      provisional patents in AI governance. He is the CEO of
-      <a href="https://ewrdigital.com/">EWR Digital</a> (a digital marketing and
-      technology agency) and leads <a href="https://modalpoint.com/">ModalPoint</a>
-      (an AI-governance advisory).
-    </p>
-
-    <h2 style="color:var(--navy);font-size:18px;margin-top:32px;margin-bottom:8px">Funding &amp; Independence</h2>
-    <p>
-      At launch, Texas AI Report is self-funded. It is affiliated with EWR
-      Digital and ModalPoint through common ownership. There are currently no
-      paid advertisers or sponsors. Coverage decisions are made editorially and
-      are independent of ModalPoint's or EWR Digital's commercial interests.
-      When a story references an affiliated entity, that relationship is disclosed
-      inline. See our full <a href="/disclosure">Ownership &amp; Disclosure</a> page.
-    </p>
-
-    <h2 style="color:var(--navy);font-size:18px;margin-top:32px;margin-bottom:8px">Contact</h2>
+    <!-- Contact -->
+    <h2 class="section-head">Contact</h2>
     <p>
       General inquiries and editorial feedback:
       <a href="mailto:editor@texasaireport.com">editor@texasaireport.com</a><br/>

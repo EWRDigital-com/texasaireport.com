@@ -1,16 +1,17 @@
 ---
-import { SITE } from '../config/site';
 ---
-<header style="border-bottom:1px solid var(--line)">
-  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;padding:12px 20px">
+<header style="border-bottom:1px solid var(--line)" data-pagefind-ignore>
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px;flex-wrap:wrap">
     <a href="/" style="display:flex;align-items:center;gap:8px;text-decoration:none">
       <span style="width:5px;height:20px;background:var(--amber);border-radius:2px;display:inline-block"></span>
       <span style="font-weight:800;letter-spacing:-.02em;color:var(--navy);font-size:18px">TEXAS AI REPORT</span>
     </a>
-    <nav style="display:flex;gap:16px;align-items:center;font-size:14px">
+    <nav class="nav">
       <a href="/policy">Policy</a><a href="/government">Government</a><a href="/business">Business</a><a href="/research">Research</a>
+      <a href="/tracker" style="font-weight:700;color:var(--navy)">Tracker</a>
       <a href="/traiga" style="font-weight:700;color:var(--navy)">TRAIGA Guide</a>
-      <a href="#newsletter" style="background:var(--amber);color:var(--ink);font-weight:800;padding:6px 12px;border-radius:5px;text-decoration:none">Subscribe</a>
+      <a href="/search" aria-label="Search" title="Search">⌕ Search</a>
+      <a href="#newsletter" class="btn" style="padding:6px 12px">Subscribe</a>
     </nav>
   </div>
 </header>

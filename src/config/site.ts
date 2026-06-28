@@ -37,3 +37,28 @@ export const MATT = {
   credentials: 'NIST AISI · IAPP/CAIA · 2 provisional patents',
 };
 export const SECTIONS = ['policy','government','business','research'] as const;
+
+// Self-hosted authentic photography (Wikimedia Commons). Credit rendered on use.
+export const PHOTOS = {
+  capitol: {
+    src: '/img/capitol.jpg',
+    alt: 'The Texas State Capitol in Austin, with the U.S. and Texas flags flying.',
+    credit: 'Farragutful / Wikimedia Commons',
+    license: 'CC BY-SA 4.0',
+    href: 'https://commons.wikimedia.org/wiki/File:2025_Texas_State_Capitol_02.jpg',
+  },
+  houston: {
+    src: '/img/houston.jpg',
+    alt: 'The downtown Houston skyline on a clear day.',
+    credit: 'Jason Villanueva / Wikimedia Commons',
+    license: 'CC BY-SA 4.0',
+    href: 'https://commons.wikimedia.org/wiki/File:Houston,_Texas_Skyline_2017.jpg',
+  },
+  austin: {
+    src: '/img/austin.jpg',
+    alt: 'The Austin skyline at dusk, reflected in Lady Bird Lake.',
+    credit: 'J Dimas / Wikimedia Commons',
+    license: 'CC BY 2.0',
+    href: 'https://commons.wikimedia.org/wiki/File:Austin_Texas_skyline_at_dusk_in_2016.jpg',
+  },
+} as const;

@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
 import StoryCard from '../components/StoryCard.astro';
 import Newsletter from '../components/Newsletter.astro';
 import { getCollection } from 'astro:content';
@@ -7,11 +8,20 @@ import { SITE } from '../config/site';
 const items=(await getCollection('news')).filter(e=>!e.data.draft)
   .sort((a,b)=>+b.data.publishDate-+a.data.publishDate);
 const [lead,...rest]=items;
+const secondary=rest.slice(0,3);
+const remaining=rest.slice(3);
+const updated=items[0]?.data.updatedDate ?? items[0]?.data.publishDate;
 ---
 <Base title={`${SITE.name} — ${SITE.tagline}`} description={SITE.tagline}>
-  <div class="wrap" style="padding:24px 20px">
-    {lead && <StoryCard entry={lead}/>}
+  {lead && <Hero lead={lead} updated={updated}/>}
+  <div class="wrap" style="padding:8px 20px 24px">
+    {secondary.length>0 && (
+      <>
+        <div class="section-head">More coverage</div>
+        <div class="three-up">{secondary.map(e=><StoryCard entry={e}/>)}</div>
+      </>
+    )}
     <Newsletter/>
-    {rest.map(e=><StoryCard entry={e}/>)}
+    {remaining.map(e=><StoryCard entry={e}/>)}
   </div>
 </Base>

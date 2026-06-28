@@ -1,0 +1,40 @@
+---
+import { PHOTOS } from '../config/site';
+const { lead, updated } = Astro.props;
+const fmt=(d:Date)=>d.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'});
+const cap = PHOTOS.capitol;
+---
+<section class="wrap" style="padding:0 20px" data-pagefind-ignore>
+  <div class="ribbon">
+    <span>Independent</span><span aria-hidden="true">·</span>
+    <span>Nonpartisan</span><span aria-hidden="true">·</span>
+    <span>Texas-Focused</span>
+    {updated && <span class="upd">Updated {fmt(updated)}</span>}
+  </div>
+
+  <div class="hero-grid">
+    <div>
+      <div class="kicker">{lead.data.section} · Top story</div>
+      <a href={`/news/${lead.id}`} style="text-decoration:none">
+        <h1 class="hero-h1">{lead.data.title}</h1>
+      </a>
+      <p style="color:var(--muted);font-size:17px;margin:0">{lead.data.dek}</p>
+      <div class="hero-cta">
+        <a href={`/news/${lead.id}`} class="btn">Read the story →</a>
+        <a href="#newsletter" class="btn-ghost">Get the daily brief</a>
+        <a href="/traiga" class="btn-ghost">TRAIGA Guide</a>
+      </div>
+    </div>
+    <figure style="margin:0">
+      <img class="hero-photo" src={cap.src} alt={cap.alt} width="800" height="600" loading="eager"/>
+      <figcaption class="photo-credit">Photo: <a href={cap.href} rel="noopener noreferrer">{cap.credit}</a>, {cap.license}</figcaption>
+    </figure>
+  </div>
+
+  <div class="res-strip">
+    <b>Start here:</b>
+    <a href="/tracker">Texas AI Law Tracker</a>
+    <a href="/traiga-checker">Does TRAIGA apply to me?</a>
+    <a href="/glossary">AI Governance Glossary</a>
+  </div>
+</section>

@@ -1,0 +1,107 @@
+---
+import Base from '../layouts/Base.astro';
+import JsonLd from '../components/JsonLd.astro';
+import { SITE } from '../config/site';
+import { LAST_UPDATED, status, deadlines, comparison, penalties, timeline, sources } from '../data/tracker';
+
+const title = `Texas AI Law Tracker — TRAIGA Status, Deadlines & Comparison — ${SITE.name}`;
+const description = 'A living tracker of Texas AI law: TRAIGA status and effective dates, upcoming compliance deadlines, the Texas vs. Colorado vs. EU comparison, penalty tiers, and a timeline. Updated ' + LAST_UPDATED + '.';
+const fmtUpd = new Date(LAST_UPDATED + 'T00:00:00Z').toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'});
+
+const dataset = {
+  '@context':'https://schema.org','@type':'Dataset',
+  name:'Texas AI Law Tracker',
+  description:'TRAIGA status, compliance deadlines, Texas/Colorado/EU comparison, and timeline of AI-law developments affecting Texas.',
+  url: SITE.url + '/tracker',
+  dateModified: LAST_UPDATED,
+  isAccessibleForFree: true,
+  creator: { '@type':'NewsMediaOrganization', name: SITE.name, url: SITE.url },
+  keywords: ['TRAIGA','Texas AI law','AI regulation','Colorado AI Act','EU AI Act','AI compliance'],
+};
+---
+<Base title={title} description={description}>
+  <JsonLd data={dataset}/>
+  <div class="col" style="padding-top:36px;padding-bottom:56px">
+    <div class="kicker">Living Resource</div>
+    <h1 style="margin:8px 0 8px;color:var(--navy)">Texas AI Law Tracker</h1>
+    <p style="font-size:18px;color:var(--muted);margin:0 0 6px">
+      The current state of AI law affecting Texas — status, deadlines, how Texas compares, and what’s next.
+    </p>
+    <p style="font-size:13px;color:var(--muted);margin:0 0 8px"><strong>Last updated:</strong> {fmtUpd}</p>
+
+    <!-- Status cards -->
+    <div class="status-cards" style="margin-top:18px">
+      {status.map(s => (
+        <div class="card card-accent">
+          <div class="kicker">{s.label}</div>
+          <div style="font-size:24px;font-weight:800;color:var(--navy);margin:6px 0 4px">{s.value}</div>
+          <div style="font-size:13px;color:var(--muted)">{s.sub}</div>
+        </div>
+      ))}
+    </div>
+
+    <!-- What's next -->
+    <h2 class="section-head">What’s next — upcoming deadlines</h2>
+    <div class="tbl-wrap">
+      <table class="cmp">
+        <thead><tr><th>Date</th><th>What happens</th><th>Who it affects</th></tr></thead>
+        <tbody>
+          {deadlines.map(d => (
+            <tr><td style="white-space:nowrap;font-weight:700;color:var(--navy)">{d.date}</td><td>{d.what}</td><td>{d.who}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Comparison -->
+    <h2 class="section-head">Texas vs. Colorado vs. EU — at a glance</h2>
+    <div class="tbl-wrap">
+      <table class="cmp">
+        <thead><tr>{comparison.cols.map(c => <th>{c}</th>)}</tr></thead>
+        <tbody>
+          {comparison.rows.map(r => (
+            <tr>{r.map((cell,i) => (i===0 ? <td><strong>{cell}</strong></td> : <td>{cell}</td>))}</tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:13px;color:var(--muted)">
+      Full analysis: <a href="/news/texas-colorado-eu-ai-law-compared">Texas, Colorado, and the EU Just Diverged on AI Law</a>.
+    </p>
+
+    <!-- Penalties -->
+    <h2 class="section-head">TRAIGA penalty tiers</h2>
+    <div class="tbl-wrap">
+      <table class="cmp">
+        <thead><tr><th>Violation type</th><th>Civil penalty</th></tr></thead>
+        <tbody>
+          {penalties.map(p => (<tr><td><strong>{p[0]}</strong></td><td>{p[1]}</td></tr>))}
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:13px;color:var(--muted)">
+      The statute does not define curable vs. uncurable; entities have a 60-day cure window after an AG notice.
+      Detail: <a href="/traiga">TRAIGA Guide → Penalties</a>.
+    </p>
+
+    <!-- Timeline -->
+    <h2 class="section-head">Timeline</h2>
+    <ul class="tl">
+      {timeline.map(t => (
+        <li><div class="d">{t.date}</div><div>{t.event}</div></li>
+      ))}
+    </ul>
+
+    <!-- Sources -->
+    <h2 class="section-head">Sources on this site</h2>
+    <ul style="padding-left:20px;margin:6px 0">
+      {sources.map(s => (<li style="margin-bottom:6px"><a href={s.href}>{s.label}</a></li>))}
+    </ul>
+
+    <hr style="margin:32px 0 20px;border:none;border-top:1px solid var(--line)"/>
+    <p style="font-size:13px;color:var(--muted)">
+      This tracker restates facts verified and sourced in our reporting as of {fmtUpd}. It is analysis and
+      commentary, not legal advice. Spotted something out of date? <a href="mailto:editor@texasaireport.com">editor@texasaireport.com</a>.
+    </p>
+  </div>
+</Base>

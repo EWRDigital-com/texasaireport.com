@@ -1,14 +1,35 @@
 ---
 import { SITE, MATT } from '../config/site';
 ---
-<footer style="border-top:1px solid var(--line);margin-top:48px;background:#fafafa">
+<footer style="border-top:1px solid var(--line);margin-top:48px;background:#fafafa" data-pagefind-ignore>
   <div class="wrap" style="padding:28px 20px;font-size:13px;color:var(--muted)">
-    <nav style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px">
-      <a href="/about">About</a><a href="/editorial-standards">Editorial Standards</a>
-      <a href="/corrections">Corrections</a><a href="/disclosure">Ownership &amp; Disclosure</a>
-      <a href="/contact">Contact</a><a href="/privacy">Privacy</a>
-      <a href="/ai-usage">AI Usage</a>
-    </nav>
+    <div style="display:flex;gap:36px;flex-wrap:wrap;margin-bottom:18px">
+      <div>
+        <div class="kicker" style="margin-bottom:8px">Resources</div>
+        <nav style="display:flex;flex-direction:column;gap:6px">
+          <a href="/tracker">Texas AI Law Tracker</a>
+          <a href="/traiga">TRAIGA Guide</a>
+          <a href="/traiga-checker">Does TRAIGA Apply to Me?</a>
+          <a href="/glossary">AI Governance Glossary</a>
+          <a href="/search">Search</a>
+        </nav>
+      </div>
+      <div>
+        <div class="kicker" style="margin-bottom:8px">Sections</div>
+        <nav style="display:flex;flex-direction:column;gap:6px">
+          <a href="/policy">Policy</a><a href="/government">Government</a>
+          <a href="/business">Business</a><a href="/research">Research</a>
+        </nav>
+      </div>
+      <div>
+        <div class="kicker" style="margin-bottom:8px">About &amp; Standards</div>
+        <nav style="display:flex;flex-direction:column;gap:6px">
+          <a href="/about">About</a><a href="/editorial-standards">Editorial Standards</a>
+          <a href="/corrections">Corrections</a><a href="/disclosure">Ownership &amp; Disclosure</a>
+          <a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/ai-usage">AI Usage</a>
+        </nav>
+      </div>
+    </div>
     <p>Texas AI Report provides analysis and commentary, not legal advice.</p>
     <p>&copy; 2026 {SITE.name}. Published by {MATT.name}.</p>
   </div>
